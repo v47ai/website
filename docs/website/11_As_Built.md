@@ -697,3 +697,364 @@ endorsement of either.
 
 *(Append new rows here as work continues — one row per meaningful commit or
 batch of commits, not every individual `git commit`.)*
+
+---
+
+# PART C — CONTENT APPENDIX (every published word, verbatim)
+
+Every string below is live copy pulled directly from source as of this
+update. **This is the fastest way to edit site copy:** find the text here,
+edit the matching file (path given per block), keep this appendix in sync
+in the same commit. Structural/JSX markup is stripped — only real content
+remains.
+
+---
+
+## C1 — Homepage (`src/app/page.tsx` + `src/components/sections/*.tsx`)
+
+**Hero** (`Hero.tsx`)
+- Eyebrow: `Boutique AI consulting · Abu Dhabi`
+- H1: `Building AI-native enterprises.`
+- Standfirst: `We help governments and enterprises move from AI strategy to production — through executive advisory, product thinking, and working AI systems.`
+- CTA primary: `Explore our work` → `/work`
+- CTA secondary: `Book an AI discovery session` → `/contact`
+
+**Trust bar** (`TrustBar.tsx`) — four items:
+`11+ years product leadership` · `Government & enterprise delivery` · `AI strategy to production` · `Abu Dhabi–licensed AI business`
+
+**Service cards** (`ServiceCards.tsx`)
+- Intro: `Most firms sell decks or sell hours. V47 owns the whole path — strategy, product, and working implementation.`
+- **Enterprise AI strategy** — `Executive interviews, opportunity assessment, governance, and operating model.` → `/services/enterprise-ai-strategy`
+- **AI product development** — `From a scoped opportunity to a working prototype an executive can click.` → `/services/ai-prototype-sprint`
+- **Government technology** — `AI delivery built for procurement, governance, and public-sector accountability.` → `/industries/government`
+- **Digital transformation** — `Modernizing how an organization operates, not just what tools it uses.` → `/services`
+
+**Industry selector** — see C6 (shared with `/industries`).
+
+**Work grid** — pulls live from the two published case studies (C4).
+
+**Method timeline** (`MethodTimeline.tsx`)
+- Eyebrow: `Our method`
+- H2: `A disciplined path from ambition to production.`
+- Stages, in order: `Discover · Prioritize · Prototype · Validate · Deploy · Scale`
+- Link: `See how we work →` → `/methods`
+
+**Think With V47** (`ThinkWithV47.tsx` + `src/lib/think-with-v47.ts`) — see C7.
+
+**Lab strip** — pulls live from the one published Lab entry (C5).
+
+**Insights grid** — pulls the 3 latest published articles (C8).
+
+**Contact band** (`ContactBand.tsx`)
+- `Have an AI problem worth solving properly?`
+- CTA: `Book an AI discovery session` → `/contact`
+- Link: `LinkedIn` → `https://www.linkedin.com/company/v47`
+
+---
+
+## C2 — About (`src/app/about/page.tsx`)
+
+- Metadata description: `V47 is led by Vignesh, Founder & Principal Consultant, with Sharmili G as Co-Founder & Head of Data Platform Engineering.`
+- Eyebrow: `About` / H1: `Vignesh`
+- Standfirst: `Founder & Principal Consultant, V47 — 11+ years of product leadership across high-growth SaaS, fintech, and enterprise AI, now directing every engagement personally.`
+- Body:
+  > V47 is a boutique by design. Clients get the person who built and scaled these systems, not a junior analyst relaying someone else's slide deck.
+  >
+  > V47 is licensed to operate as an AI consulting business in Abu Dhabi, and works across government and enterprise clients in the GCC.
+  >
+  > The practice exists on a simple premise: most AI initiatives don't fail on the model, they fail on everything around it — governance, ownership, data reality, and the judgment calls a demo never has to make. V47 is built to own that whole path, not just the parts that demo well.
+
+**"Proven architecture, not presentation decks"**
+> Before founding V47, Vignesh built and scaled the kind of systems most AI consultancies only pitch.
+
+- **AVP of Product, EXL (Paymentor.ai)** — Scaled an AI-powered collections and BNPL SaaS platform from initial pilots to $5M contracts, engaging directly with bank CXOs across the US and the GCC.
+- **Product Lead & Consultant, KPMG** — Led product strategy for TEJAS, the Government of India's national analytics platform built under CEDA — detailed below.
+- Caveat: `These outcomes were delivered under EXL and KPMG, prior to V47's founding — cited here as track record, not as V47 engagements.`
+
+**"Inside TEJAS: a national analytics platform"**
+> In 2021, India's Ministry of Electronics and Information Technology (MeitY), working through the National Informatics Centre (NIC) and NICSI, launched TEJAS — Technology Enabled Justified Analytics Solution — under the Centre of Excellence for Data Analytics (CEDA). The mandate was blunt: give government departments a no-code way to turn raw administrative data into working dashboards, without every ministry buying its own proprietary BI software.
+>
+> Vignesh led product strategy for TEJAS at KPMG — shaping a drag-and-drop data preparation layer, configurable dashboards with department-level performance indicators, geospatial mapping through Bharat Maps, and role-based access controls, all built on open-source technology so departments weren't locked into a commercial BI vendor. Internal reporting during that period put adoption at 128,000+ users across multiple ministries; NIC's own public reporting later cited over 75% of NIC-supported state applications migrating to or evaluating the platform.
+>
+> The lesson that carries into V47's work: adoption at that scale doesn't come from a better model, it comes from a product built around how a government department actually works — access control, reporting cadence, and a rollout path a risk-averse ministry can sign off on.
+- Caveat: `Platform facts sourced from NIC and MeitY public materials and independent policy reporting; adoption figures during Vignesh's tenure are cited from internal reporting at the time, not a published NIC statistic.`
+
+**"GCC regulatory fluency"**
+> At EXL, Vignesh delivered open banking readiness assessments for GCC banks — mapping API maturity and aligning product engineering work with the CBUAE Open Finance Regulation and the SAMA Open Banking framework. That regulatory fluency now shapes how V47 designs [regulated AI systems](/services/regulated-ai-open-finance) for financial institutions across the region.
+
+**Leadership — Sharmili G**
+- Eyebrow: `Leadership` / H2: `Sharmili G`
+- Standfirst: `Co-Founder & Head of Data Platform Engineering, V47 — 12+ years building enterprise data platforms and cloud migrations across banking, financial services, and automotive.`
+- `Where Vignesh scopes the regulatory and product strategy, Sharmili builds the data platform underneath it. Most AI vendors outsource one half of that pairing; V47 doesn't have to.`
+
+Track record:
+- **Lead Data Engineer, Tech Mahindra (Thirdware Solutions)** — Architected the migration of Ford Motor Credit's enterprise data warehouse to Google Cloud Platform — GCP Dataflow and BigQuery pipelines built to support IFRS 9/CECL regulatory reporting, led by a team of 5+ engineers.
+- **Senior ETL Consultant, OCBC Bank & AmBank Group (Malaysia)** — Built OCBC's New Statistical Reporting System for Bank Negara Malaysia's compliance requirements, and AmBank's Central Credit Reference Information System — regulator-facing data infrastructure for two of Malaysia's national banking authorities.
+- **Senior Software Developer, Wipro Technologies** — Delivered fraud-detection and reconciliation systems for Lloyds Banking Group, Citibank, and State Street, including the Falcon platform for payment card fraud mitigation.
+
+Selected projects:
+- **ECL — Ford Motor Credit** — ETL development for IFRS 9/CECL compliance, calculating and reporting Expected Credit Loss on a quarterly basis.
+- **ELMM — Ford Motor Credit** — Migrated the enterprise data warehouse from Teradata to Google Cloud Platform via cloud dataflow pipelines.
+- **BNM NSRS Reporting — OCBC Bank** — Standardized statistical reporting infrastructure to Bank Negara Malaysia's requirements.
+- **CCRIS — AmBank Group** — Automated credit-related data processing across participating financial institutions for the Credit Bureau.
+- **FALCON Debit — Lloyds Banking Group** — Payment card fraud detection and mitigation across payment methods.
+- **Enterprise Bigdata Platform — OCBC Bank** — Migrated the data store platform to a real-time data hub via a Hadoop staging layer.
+
+- `Certified across all three major cloud platforms — AWS, Azure, and Google Cloud — with an MS in Software Engineering from BITS Pilani. That breadth is what lets V47 commit to a cloud target without a separate vendor for the migration itself.`
+- Caveat: `These outcomes were delivered under Tech Mahindra, Cognizant, OCBC, AmBank, and Wipro, prior to V47's founding — cited here as track record, not as V47 engagements.`
+
+**"How V47 operates"** (three principles)
+- **Verifiable over impressive** — Every claim on this site is written to survive a reference check. No invented client names, no fabricated metrics.
+- **Demonstrate before you claim** — Work, Methods, and the AI Lab exist so a buyer can see the approach before taking our word for it.
+- **Enterprise first** — Every decision assumes the reader is a CIO, a government director, or a procurement committee — not a consumer audience.
+
+CTA: `Book a session` → `/contact`
+
+---
+
+## C3 — Services (`src/app/services/page.tsx` + 2 detail pages)
+
+**Index page**
+- Eyebrow: `Services` / H1: `How we engage.`
+- Standfirst: `Three ways to work with V47, each written as a consulting offering, not a feature list.`
+- Caveat: `Specific durations, pricing, and deliverable detail are scoped per engagement in a discovery session — nothing generic ships here that wouldn't hold up client to client.`
+
+Core three:
+- **AI Discovery Workshop** — `Duration, Deliverables, Outcomes, Ideal client` — `A scoped engagement to turn a broad AI mandate into specific, fundable opportunities — using the AI Discovery Framework.` → `/methods/ai-discovery-framework`
+- **AI Prototype Sprint** — `Working prototype, Architecture, Executive demo, Roadmap` — `From a scoped opportunity to a working prototype an executive can click — not a slide deck of what AI could do.` → `/lab`
+- **Enterprise AI Strategy** — `Executive interviews, Opportunity assessment, Governance, Operating model` — `Full strategic engagement covering governance and operating model, not just a roadmap of technology choices.` → `/contact`
+
+Specialized two:
+- **Regulated AI & Open Finance Frameworks** — `Audit-trail engineering, Consent architecture, Data residency` — `For banks, insurers, and financial infrastructure operating under CBUAE and SAMA oversight.` → `/services/regulated-ai-open-finance`
+- **Enterprise Decision Intelligence Systems** — `Ontology mapping, Scenario simulation, Human-in-the-loop orchestration` — `A reasoning layer across fragmented operational data, built around your existing systems.` → `/services/decision-intelligence-os`
+
+### `/services/regulated-ai-open-finance`
+- H1: `Regulated AI & Open Finance Frameworks`
+- Standfirst: `For banks, insurers, and financial infrastructure operating under CBUAE and SAMA oversight.`
+- **"The compliance question comes first, not last"** — `Financial AI systems tend to fail review when governance is added after the model already works. V47 designs regulated AI systems the other way around — the audit trail, consent model, and data residency boundary are part of the architecture from day one, not a compliance appendix added at the end.`
+- **What this covers:**
+  - Retrieval-augmented and agentic workflows architected around the consent and data-sharing requirements set out in the CBUAE Open Finance Regulation and the SAMA Open Banking framework.
+  - Decision logging — every AI-assisted output paired with a traceable record of the inputs and sources behind it, built for an internal compliance or risk function to review.
+  - Consent and data-boundary design — scoped access to personal and non-public financial data, not blanket application-level access.
+  - Deployment within your required regional cloud boundary, where data residency is treated as a hard constraint rather than a preference.
+- **How we work (table):**
+  | Constraint | V47's approach |
+  |---|---|
+  | Model outputs that can't be traced back to a source | Every output is grounded in retrieval sources or a validation layer — nothing ships as an unexplained model guess inside a regulated workflow. |
+  | Data residency requirements | Architecture decisions start from where data is allowed to live, not retrofitted after a vendor or model is chosen. |
+  | Consent and access scope | Access to personal or non-public financial data is scoped and logged at the API level, not assumed at the application layer. |
+- **Who this is for:** `Banks, insurers, payment institutions, and financial infrastructure providers in the UAE and wider GCC moving an AI initiative from an internal pilot toward a system a compliance function will actually sign off on.`
+- Caveat: `This describes V47's method, not a completed regulatory approval. Specific compliance sign-off is always the responsibility of your institution's own risk and legal functions.`
+
+### `/services/decision-intelligence-os`
+- H1: `Enterprise Decision Intelligence Systems`
+- Standfirst: `A single reasoning layer across fragmented operational data — built around your existing systems, not a replacement for them.`
+- **"The problem usually isn't a lack of data"** — `Most large enterprises already have the data they need. It sits split across ERPs, legacy databases, and departmental tools that don't talk to each other, so decisions get made on whichever fragment a team happens to have open. V47 builds a decision intelligence layer that sits across your existing systems — it doesn't ask you to migrate into a new one.`
+- **What this covers:**
+  - Ontology mapping — connecting the people, assets, processes, and financial data already in your systems into one queryable model, without duplicating or migrating the underlying data.
+  - Scenario simulation — a sandbox for testing operational decisions against the real data model before committing budget or shifting resources.
+  - Human-in-the-loop orchestration — AI agents handle aggregation and surfacing of relevant information; the decision itself stays with your team.
+- **Where this applies:**
+  - Logistics & supply chain — Routing and inventory decisions that currently depend on multiple disconnected systems.
+  - Energy & infrastructure — Asset and maintenance data spread across engineering, operations, and finance tools.
+  - Investment & portfolio functions — Exposure and pipeline data currently reconciled by hand across spreadsheets.
+  - Multi-brand retail & conglomerates — Demand and procurement data siloed by business unit.
+- **"How this differs from a large platform deployment"** — `Rather than a multi-year implementation that asks your organization to adopt a new platform's data model, V47 scopes a modular layer around the systems you already run — starting with the highest-friction decision, not a full data migration.`
+- Caveat: `Scope, timeline, and which systems are in bounds for a first phase are set in a discovery session — nothing generic ships here that wouldn't hold up engagement to engagement.`
+
+---
+
+## C4 — Case studies (`content/case-studies/*.mdx`)
+
+### Justice Corner (`/work/justice-corner`) — status: Delivered
+`summary`: An AI-assisted platform built to help people navigate legal processes without a lawyer in the room.
+
+- **Client Context** — Justice Corner is a legal-technology initiative built to make legal processes more navigable for people who cannot afford — or do not need — full legal representation for every step.
+- **Business Challenge** — Legal processes are procedurally complex and written for lawyers, not the people going through them. Most self-represented users lose time and confidence navigating forms, deadlines, and jurisdiction-specific procedure, and existing legal-tech tools tend to either oversimplify (generic templates) or underserve (a search box).
+- **Objectives** — Give a non-lawyer user a clear, procedurally accurate path through a legal process. Keep the system honest about what it can and cannot advise on. Build something a real user could complete a real task in, not a chatbot demo.
+- **Approach** — V47 designed the product around the user's actual task sequence — not a general-purpose legal chatbot. The system decomposes a legal process into its constituent steps, surfaces the right guidance and forms at the right step, and uses AI to interpret user input into that structured process rather than to generate open-ended legal advice.
+- **Architecture** — A structured, step-driven application layer sits in front of the AI components. The process engine — not the model — owns the source of truth for where a user is in a legal process; the AI's job is to interpret free-form input into that structure and to generate guidance within it, never to originate advice unprompted by the defined steps.
+- **Technology** — An LLM-based interpretation layer sits on top of a deterministic process engine, rather than the model driving the interaction end to end. We publish specific vendor and infrastructure detail on a case-by-case basis — ask us directly if that's relevant to your evaluation.
+- **Results** — Delivered and in use. Consistent with V47's verifiable-claims standard, we don't publish usage or outcome numbers without a source a buyer could check — ask us for current specifics in a session.
+- **Key Learnings** — Procedural accuracy matters more than conversational fluency for this kind of tool — users trust a system that gets the steps right over one that sounds articulate. Keeping the AI's role bounded to interpretation and guidance, rather than open-ended advice, was the right call for both trust and liability.
+
+### Executive Intelligence OS (`/work/executive-intelligence-os`) — status: In progress
+`summary`: A working system to give executives a single, governed view across the information they'd otherwise chase across tools and teams.
+
+- **Client Context** — Executive Intelligence OS is built for a familiar executive problem: the information needed to make a decision exists somewhere in the organization, but not in one place, not in one format, and not on demand.
+- **Business Challenge** — Executives spend a disproportionate amount of time assembling context — pulling reports, chasing updates, reconciling numbers across systems — before they can actually decide anything. Off-the-shelf BI tools show what's queryable; they don't reason across it or surface what actually matters this week.
+- **Objectives** — Give an executive a governed, single point of access to the state of their organization. Keep business logic deterministic where it needs to be — AI interprets and summarizes, it doesn't silently make decisions. Build a system an executive would actually open daily, not a dashboard that gets ignored after week two.
+- **Approach** — V47 treated this as a product problem before an AI problem: define what an executive actually needs to know, on what cadence, and at what level of detail — then use AI to compress and contextualize that information rather than to generate it from scratch.
+- **Architecture** — A data and reporting layer feeds a reasoning and summarization layer, with the AI positioned to interpret and prioritize information rather than originate it — the underlying data sources remain the system of record, not the model's output.
+- **Technology** — LLM-based summarization and prioritization on top of structured organizational data sources. We publish specific vendor and infrastructure detail on a case-by-case basis — ask us directly if that's relevant to your evaluation.
+- **Results** — Actively in development. We'll publish results here once the system reaches a milestone worth reporting — consistent with V47's rule that no metric ships without a source a buyer could check.
+- **Key Learnings** — The hardest part of an "executive AI" product isn't the AI — it's deciding what an executive actually needs to see and when. Getting that editorial judgment right (what to surface, what to suppress) matters more than model sophistication.
+
+---
+
+## C5 — AI Lab (`content/ai-lab/ai-pmo.mdx`)
+
+### AI PMO (`/lab/ai-pmo`) — status: In progress
+`summary`: An experiment in using AI to run the mechanical parts of project management — status tracking, risk surfacing, reporting — so a PMO can spend its time on judgment calls instead of status updates.
+
+- **What it does** — AI PMO is a working experiment in offloading the repetitive mechanics of project management — chasing status updates, assembling reports, flagging risks buried in scattered updates — to an AI layer, so the humans running the PMO can spend their time on judgment calls: what's actually at risk, what needs escalation, what to do about it. *Status: in progress. There's no public demo link yet — this entry documents the architecture and thinking as it's being built, honestly, rather than waiting for a polished launch to talk about it.*
+- **Architecture** — A structured project-data layer (tasks, statuses, dependencies, updates) feeds an AI layer that summarizes state and surfaces anomalies. The project-data layer stays the source of truth — the AI interprets and flags, it doesn't own or overwrite project state.
+- **Stack** — We'll publish the full stack once it's stable enough to commit to writing rather than describe a moving target — ask us directly for where it stands today.
+- **Lessons learned so far** — The genuinely hard part isn't summarizing status — it's deciding what's worth flagging versus what's normal variance. An AI PMO that flags everything is as useless as a PMO that flags nothing; getting that threshold right is turning out to be more of a product-judgment problem than a modeling problem.
+
+---
+
+## C6 — Methods / Frameworks + Industries
+
+### AI Discovery Framework (`content/methods/ai-discovery-framework.mdx`, `/methods/ai-discovery-framework`) — status: Delivered
+`summary`: How V47 turns an ambitious AI mandate into a scoped, fundable set of opportunities — before a single line of code gets written.
+
+- **Thesis** — Most AI initiatives fail before they start writing code — not because the technology doesn't work, but because nobody scoped the problem tightly enough to know what "working" would mean. The AI Discovery Framework exists to close that gap: turn a broad executive mandate ("do something with AI") into a small number of specific, fundable, measurable opportunities.
+- **Stages:**
+  1. **Executive interviews.** Understand the mandate, the constraints, and what "success" actually means to the people funding it.
+  2. **Opportunity mapping.** Survey the organization's processes and data for where AI genuinely changes the economics — not everywhere it's technically possible.
+  3. **Feasibility and risk screen.** Rule out what's technically fragile, ungoverned, or premature before it becomes an expensive lesson.
+  4. **Prioritization.** Rank the surviving opportunities by impact and buildability, not by novelty.
+  5. **Scoped roadmap.** Leave the client with a small number of prioritized opportunities, each scoped enough to brief a build team — not a slide deck of AI ideas.
+- **When to use this** — Best fit for an organization with real AI ambition but no scoped starting point — a mandate from leadership without a mandate's worth of clarity underneath it. It's the front door to an AI Prototype Sprint or an Enterprise AI Strategy engagement, not a replacement for either. `Have a mandate that needs scoping? Talk to us about this → /contact`
+
+### Industries (`src/lib/industries.ts`, `/industries` + `/industries/[slug]`)
+
+| Slug | Label | Context | Value |
+|---|---|---|---|
+| `government` | Government | Public-sector programmes with real procurement and governance constraints. | AI that fits existing accountability structures instead of fighting them. |
+| `construction` | Construction | Complex, multi-party projects with heavy documentation and coordination overhead. | AI that cuts through document and coordination overhead across contractors. |
+| `real-estate` | Real estate | Portfolio and transaction-heavy operations with fragmented data sources. | AI that unifies scattered portfolio data into decisions leadership can act on. |
+| `financial-services` | Financial services | Regulated institutions balancing innovation against compliance risk. | AI delivery with governance and audit trails built in from day one. |
+| `healthcare` | Healthcare | High-stakes environments where AI must augment, never replace, clinical judgment. | AI positioned to support decisions, with humans firmly accountable. |
+| `education` | Education | Institutions balancing personalization against equity and oversight. | AI that supports educators rather than automating around them. |
+| `legal` | Legal | Procedurally strict processes where accuracy matters more than fluency. | AI that interprets and guides within defined guardrails, not open-ended advice. |
+
+---
+
+## C7 — Think With V47 (`src/lib/think-with-v47.ts` + `ThinkWithV47.tsx`)
+
+**Section copy:**
+- Eyebrow: `Think with V47` / H2: `See how we'd approach your problem.`
+- Intro: `A live, scoped preview of our discovery thinking — not a quote, not a commitment. Pick the closest fit and generate an illustrative starting point.`
+- Button: `Generate a blueprint` (loading state: `Generating…`)
+- Unconfigured state: `This feature is built but not yet switched on — it needs an API key configured. Check back soon, or book a session in the meantime.`
+- Error state: `Couldn't generate a blueprint right now. Try again in a moment.`
+- Result disclaimer: `Illustrative starting point, not a quote or a commitment. Scoped detail only follows a real discovery session.`
+- Result CTA: `Book a discovery session` → `/contact`
+
+**Dropdown options:**
+- *Challenge:* Automating citizen or public service requests · Modernizing an internal operations process · Reducing customer/citizen support load with AI · Unifying fragmented data for reporting or decisions · Streamlining a procurement or approval workflow
+- *Organization type:* Government / public sector · Financial services · Healthcare · Real estate · Large enterprise (other)
+- *Primary constraint:* Strict data privacy / residency requirements · Heavy reliance on legacy systems · Slow procurement / long approval timelines · Limited in-house AI maturity
+
+**System prompt (verbatim, drives Claude's output):**
+> You are V47, a boutique AI consulting practice for GCC governments and enterprises. Draft a short, honest, illustrative AI architecture blueprint for a prospective client, in V47's voice: precise, candid, no hype, no banned buzzwords (leading, cutting-edge, revolutionary, world-class, game-changing, next-gen, seamless, synergy, unlock, empower, robust, leverage, solutions-as-catch-all). This is a starting point for a discovery conversation, not a delivered proposal or a quote — never state or imply specific costs, timelines in exact weeks/months, team sizes, or guaranteed outcomes. Keep the roadmap to V47's real six-stage method: Discover, Prioritize, Prototype, Validate, Deploy, Scale.
+
+---
+
+## C8 — Insights articles (`content/insights/*.mdx`)
+
+### Why AI pilots stall before production (`/insights/why-ai-pilots-stall-before-production`) — pillar: ai-strategy
+`summary`: Most enterprise AI pilots don't fail on the model. They fail on the gap between a demo and a system someone can be accountable for.
+
+> Most enterprise AI pilots don't fail because the model was wrong. They fail because a demo and a production system are different engineering problems wearing the same UI, and organizations budget, staff, and govern for the first one while quietly needing the second.
+>
+> **The demo is the easy 80%** — A working prototype that impresses a room is genuinely achievable in weeks. It answers the question "can this work at all?" — and for most enterprise use cases, yes, it can. That's not the hard part anymore. The hard part is everything a demo is explicitly allowed to skip: what happens when the input is malformed, who is accountable when the output is wrong, how the system behaves under load, and who signs off on it touching a real customer or a real decision.
+>
+> **Three places pilots actually stall:**
+> - **Ownership.** A pilot built by an innovation team or a vendor has no natural home in the org chart. When it's time to harden it for production, there's often no team whose job it is to own that — so it sits in limbo until someone champions it, or it quietly dies.
+> - **Governance.** Most enterprises, especially regulated ones, don't have a clear answer to "who approves an AI system touching this process?" until someone asks. Building that governance path in parallel with the pilot — not after it — is the difference between a six-week delay and a project that never restarts.
+> - **Data reality.** Demos run on curated, cooperative data. Production runs on the data the organization actually has: incomplete, inconsistently formatted, spread across systems that don't talk to each other. Most of the "AI work" in a real production system is actually data-plumbing work, and it's rarely scoped for in the pilot phase.
+>
+> **What changes the outcome** — Treating the pilot as a proof of the production system, not a separate thing from it. That means scoping governance and ownership questions at the start, not after the demo lands well — and being honest early about which parts of the eventual system are AI and which are the deterministic plumbing around it that will actually determine whether it ships.
+>
+> The organizations that get from pilot to production aren't the ones with the most sophisticated models. They're the ones that treated "who owns this, and how does it get approved" as a day-one question instead of a week-twelve surprise.
+
+### What AI governance actually requires in regulated environments (`/insights/ai-governance-in-regulated-environments`) — pillar: ai-governance
+`summary`: Governance isn't a policy document. It's a set of specific answers a regulated organization needs before an AI system can touch a real decision.
+
+> In government and other regulated environments, "we need an AI governance framework" usually means something narrower and more useful than it sounds: a specific set of answers an organization needs before it lets an AI system touch a real decision, a real citizen interaction, or real regulated data.
+>
+> **The four questions that actually matter:**
+> - **Who is accountable when the system is wrong?** Not "the AI" — a named role or function. If an organization can't answer this before deployment, it isn't ready to deploy, regardless of how well the model performs in testing.
+> - **What can the system decide versus recommend?** Most defensible AI governance draws this line explicitly: the AI can summarize, flag, and recommend; a human accountable party makes the decision it feeds into. Blurring this line is where most governance failures actually originate — not in the model's accuracy.
+> - **What's the audit trail?** Regulated environments need to reconstruct, after the fact, what the system saw, what it output, and why a human acted on it the way they did. If that trail doesn't exist by design, it won't exist when a regulator or an auditor asks for it.
+> - **What happens when the system is confidently wrong?** Every AI system will be confidently wrong sometimes. Governance means having a defined path for catching and correcting that — not assuming it won't happen because the accuracy numbers look good in a demo.
+>
+> **Why this is a design problem, not a policy problem** — Organizations often treat governance as a document to produce after the system is built — a compliance artifact. In practice, the four questions above are architecture decisions: where the human-in-the-loop sits, what gets logged, what the system is and isn't permitted to output unsupervised. Bolting that onto a system after it's built is far more expensive than designing for it from the start, and it's usually visible to anyone reviewing the system that it was retrofitted rather than designed in.
+>
+> **What this means in practice** — For a government or enterprise buyer, the practical test isn't "does this vendor have a governance framework" — most do, on paper. It's "can this vendor answer the four questions above specifically, for this system, before it touches anything real." If the answer is vague, the governance is vague, no matter what the framework document says.
+
+### The product-management skills AI teams are missing (`/insights/product-management-skills-ai-teams-are-missing`) — pillar: product-leadership
+`summary`: Most enterprise AI teams are staffed for modeling and short on the product judgment that decides whether the system actually gets used.
+
+> Enterprise AI teams are typically staffed for the modeling problem — data scientists, ML engineers, increasingly prompt and agent specialists. They're much less often staffed for the product problem: deciding what the system should actually do, for whom, and when it should stay quiet.
+>
+> **The skill that's missing isn't technical** — The best AI systems make constant editorial decisions: what to surface and what to suppress, when confidence is high enough to act versus flag, how much autonomy a user actually wants versus how much control they need to keep. None of that is a modeling question. It's the same judgment a good product manager applies to any feature — except most AI initiatives don't have that judgment in the room, because the team was built to answer "can we build this," not "should this exist in this form."
+>
+> **Where this shows up:**
+> - **Over-triggering.** A system that flags or suggests too often trains its users to ignore it — the exact failure mode of an over-eager notification system, just wearing an AI label. This is a product-design failure, not a model-accuracy failure.
+> - **Wrong unit of autonomy.** Some tasks genuinely benefit from an AI acting autonomously; most enterprise tasks benefit more from an AI drafting and a human approving. Getting this wrong in either direction — too much autonomy, or too little — is a judgment call that has nothing to do with model capability.
+> - **No opinion on "done."** Teams optimized for model performance can iterate accuracy metrics indefinitely without ever asking whether the system, as it exists today, is good enough to ship to a real user doing a real job. That's a product question, and it needs a product answer, not a leaderboard number.
+>
+> **What good looks like** — The AI teams that ship systems people actually keep using tend to have one thing in common: someone in the room whose job is to decide what the system should and shouldn't do — not just what it's capable of doing. That's product management. It's not a nice-to-have on an AI team; for enterprise deployments, it's usually the difference between a system that gets adopted and one that gets a polite pilot writeup and quietly shelved.
+
+---
+
+## C9 — Contact, Legal, Company Profile
+
+### `/contact` (`src/app/contact/page.tsx`)
+- Eyebrow: `Contact` / H1: `Have an AI problem worth solving properly?`
+- Standfirst: `Three ways to reach us. No long qualification form.`
+- **Book a discovery session** — `Email directly to set up a session — a dedicated scheduling link is being finalized.` → `mailto:vignesh@v47ai.com?subject=AI%20discovery%20session`
+- **Email** — `For anything else.` → `vignesh@v47ai.com`
+- **LinkedIn** — `Follow or message directly.` → `linkedin.com/company/v47`
+
+### `/privacy` (`src/app/privacy/page.tsx`)
+- Caveat banner: `Draft placeholder — this policy has not been reviewed by counsel. Replace with a reviewed policy before this site handles real visitor data at scale.`
+- Body: `This site uses privacy-respecting analytics (Google Analytics 4 and Microsoft Clarity) to understand how visitors use it. We don't sell visitor data. If you contact us by email, we use the information you send only to respond to you.` / `Questions about this policy: vignesh@v47ai.com.`
+
+### `/terms` (`src/app/terms/page.tsx`)
+- Caveat banner: `Draft placeholder — these terms have not been reviewed by counsel. Replace with reviewed terms before relying on this page.`
+- Body: `This website and its content are provided by V47, a boutique AI consulting practice licensed in Abu Dhabi, UAE. Content on this site is informational and does not constitute a service agreement — engagement terms are set out separately in any signed proposal or contract with V47.` / `Questions about these terms: vignesh@v47ai.com.`
+
+### `/company-profile` (`src/app/company-profile/page.tsx`)
+- Eyebrow: `Firm` / H1: `Company profile` — Badge: `In progress`
+- `A downloadable, procurement-ready PDF is in production — built from the same design system as this site, so it reads as one document family, not a separate marketing artefact.`
+- `In the meantime, everything the profile will summarize — work, methods, and how to reach us — is already on this site.`
+
+---
+
+## C10 — Global chrome (Nav, Footer, JSON-LD)
+
+**Nav** (`src/components/layout/Nav.tsx`) — links, in order: `Services · Industries · Work · Methods · Lab · Insights · About`. CTA: `Book a session` → `/contact`.
+
+**Footer** (`src/components/layout/Footer.tsx`)
+- Explore: Services, Industries, Work, Methods, Lab, Insights
+- Firm: About, Company profile, Contact
+- Connect: Book a session, LinkedIn, RSS
+- Legal: Privacy, Terms
+- Descriptor line: `AI consulting · Abu Dhabi`
+- Base row: `V47 · Boutique AI Consulting · Licensed in Abu Dhabi, UAE` / `© {year} V47.`
+
+**Organization JSON-LD** (`src/app/layout.tsx`)
+```json
+{
+  "@type": "ProfessionalService",
+  "name": "V47",
+  "description": "Boutique AI consulting — from AI strategy to production.",
+  "areaServed": ["AE", "GCC"],
+  "address": { "addressLocality": "Abu Dhabi", "addressCountry": "AE" },
+  "url": "https://v47ai.com",
+  "sameAs": ["https://www.linkedin.com/company/v47"],
+  "founder": [
+    { "name": "Vignesh", "jobTitle": "Founder & Principal Consultant" },
+    { "name": "Sharmili G", "jobTitle": "Co-Founder & Head of Data Platform Engineering" }
+  ]
+}
+```
+
+**Site-wide metadata default:** title `V47 — Boutique AI Consulting`, description `Boutique AI consulting — from AI strategy to production.`
+
+**Contact email used throughout:** `vignesh@v47ai.com` (Block 1's open question about final domain email is still unresolved — this address is live in copy regardless).
