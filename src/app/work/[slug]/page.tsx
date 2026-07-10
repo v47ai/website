@@ -29,23 +29,5 @@ export default async function CaseStudyPage({ params }: PageProps) {
   const entry = getEntryBySlug("case-study", slug);
   if (!entry) notFound();
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    name: entry.frontmatter.title,
-    description: entry.frontmatter.summary,
-    author: { "@type": "Person", name: entry.frontmatter.author },
-    datePublished: entry.frontmatter.publishedAt,
-    dateModified: entry.frontmatter.updatedAt,
-  };
-
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <ContentDetail entry={entry} eyebrowLabel="Case study" indexHref="/work" indexLabel="Work" />
-    </>
-  );
+  return <ContentDetail entry={entry} eyebrowLabel="Case study" indexHref="/work" indexLabel="Work" />;
 }

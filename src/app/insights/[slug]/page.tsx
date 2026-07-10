@@ -29,29 +29,13 @@ export default async function InsightArticlePage({ params }: PageProps) {
   const entry = getEntryBySlug("insight", slug);
   if (!entry) notFound();
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: entry.frontmatter.title,
-    description: entry.frontmatter.summary,
-    author: { "@type": "Person", name: entry.frontmatter.author },
-    datePublished: entry.frontmatter.publishedAt,
-    dateModified: entry.frontmatter.updatedAt,
-  };
-
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <ContentDetail
-        entry={entry}
-        eyebrowLabel="Insight"
-        indexHref="/insights"
-        indexLabel="Insights"
-        showCta={false}
-      />
-    </>
+    <ContentDetail
+      entry={entry}
+      eyebrowLabel="Insight"
+      indexHref="/insights"
+      indexLabel="Insights"
+      showCta={false}
+    />
   );
 }
