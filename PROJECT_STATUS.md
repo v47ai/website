@@ -47,6 +47,16 @@ continuous pass, at the project owner's explicit direction.
   `website-v47ai.vercel.app`). GA4 + Clarity scaffolding wired in
   `src/components/Analytics.tsx`, gated on env vars — inactive until real
   IDs are set.
+- **Post-V1 additions (same session, at the owner's direction):**
+  - `/services` and `/industries` (index + `[slug]`) — homepage already
+    linked to both; they were 404ing.
+  - **Think With V47** — a scoped homepage feature (between Case Studies
+    and AI Lab) that generates an illustrative discovery blueprint via
+    Claude (`claude-opus-4-8`, structured JSON output). Fixed dropdown
+    inputs only (no free text), no budget/cost figures, explicit
+    "illustrative, not a quote" framing, basic per-IP rate limiting.
+    Gated on `ANTHROPIC_API_KEY` — shows an honest "not yet switched on"
+    state when unset, same pattern as Analytics.
 
 ## In Progress
 
@@ -63,6 +73,11 @@ Nothing currently in progress.
   project ID are not set. Add `NEXT_PUBLIC_GA_MEASUREMENT_ID` and
   `NEXT_PUBLIC_CLARITY_PROJECT_ID` in Vercel project env vars to activate
   — no code change needed.
+- **Think With V47 activation:** needs `ANTHROPIC_API_KEY` set in Vercel
+  project env vars. Real per-request cost (Opus-tier, structured JSON
+  output) — the in-memory rate limit is best-effort only (resets per
+  serverless cold start, not shared across instances); consider a durable
+  rate limiter (e.g. Upstash) before high-traffic launch.
 - **Search Console:** not yet verified/submitted (needs the custom domain
   live first).
 - **Booking tool:** `/contact` currently uses a real `mailto:` action for
@@ -75,13 +90,17 @@ Nothing currently in progress.
   stock/casual substitute has been used.
 - **Legal pages:** `/privacy` and `/terms` are honest draft boilerplate,
   explicitly flagged on-page as not yet reviewed by counsel.
+- **Services page specifics:** duration/pricing/deliverable detail is
+  explicitly deferred to a real discovery session, not generic content.
 
 ## Next Milestone
 
-None queued. V1 build order is complete. Future work is either finishing
-the blocked items above, or beginning Phase 5–6 items explicitly deferred
-by `docs/website/09_Execution_Roadmap.md` (remaining case studies, full
-Services/Industries pages, additional Lab entries and Frameworks).
+None queued. V1 build order plus the post-V1 additions above are
+complete. Future work is either finishing the blocked items above, or
+beginning Phase 5–6 items explicitly deferred by
+`docs/website/09_Execution_Roadmap.md` (remaining case studies,
+additional Lab entries and Frameworks, `/blueprint` route reservation
+for the future Blueprint Studio product).
 
 ## Success Criteria
 
