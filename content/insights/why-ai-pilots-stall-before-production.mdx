@@ -1,0 +1,33 @@
+---
+title: "Why AI pilots stall before production"
+slug: "why-ai-pilots-stall-before-production"
+type: "insight"
+pillar: "ai-strategy"
+secondaryPillar: "enterprise-ai"
+status: "delivered"
+summary: "Most enterprise AI pilots don't fail on the model. They fail on the gap between a demo and a system someone can be accountable for."
+publishedAt: "2026-07-01"
+updatedAt: "2026-07-01"
+author: "Vignesh"
+confidential: false
+---
+
+Most enterprise AI pilots don't fail because the model was wrong. They fail because a demo and a production system are different engineering problems wearing the same UI, and organizations budget, staff, and govern for the first one while quietly needing the second.
+
+## The demo is the easy 80%
+
+A working prototype that impresses a room is genuinely achievable in weeks. It answers the question "can this work at all?" — and for most enterprise use cases, yes, it can. That's not the hard part anymore. The hard part is everything a demo is explicitly allowed to skip: what happens when the input is malformed, who is accountable when the output is wrong, how the system behaves under load, and who signs off on it touching a real customer or a real decision.
+
+## Three places pilots actually stall
+
+**Ownership.** A pilot built by an innovation team or a vendor has no natural home in the org chart. When it's time to harden it for production, there's often no team whose job it is to own that — so it sits in limbo until someone champions it, or it quietly dies.
+
+**Governance.** Most enterprises, especially regulated ones, don't have a clear answer to "who approves an AI system touching this process?" until someone asks. Building that governance path in parallel with the pilot — not after it — is the difference between a six-week delay and a project that never restarts.
+
+**Data reality.** Demos run on curated, cooperative data. Production runs on the data the organization actually has: incomplete, inconsistently formatted, spread across systems that don't talk to each other. Most of the "AI work" in a real production system is actually data-plumbing work, and it's rarely scoped for in the pilot phase.
+
+## What changes the outcome
+
+Treating the pilot as a proof of the production system, not a separate thing from it. That means scoping governance and ownership questions at the start, not after the demo lands well — and being honest early about which parts of the eventual system are AI and which are the deterministic plumbing around it that will actually determine whether it ships.
+
+The organizations that get from pilot to production aren't the ones with the most sophisticated models. They're the ones that treated "who owns this, and how does it get approved" as a day-one question instead of a week-twelve surprise.

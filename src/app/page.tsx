@@ -1,14 +1,34 @@
-import { Eyebrow } from "@/components/primitives/Eyebrow";
+import type { Metadata } from "next";
+
+import { Hero } from "@/components/sections/Hero";
+import { TrustBar } from "@/components/sections/TrustBar";
+import { ServiceCards } from "@/components/sections/ServiceCards";
+import { IndustrySelector } from "@/components/sections/IndustrySelector";
+import { WorkGrid } from "@/components/sections/WorkGrid";
+import { MethodTimeline } from "@/components/sections/MethodTimeline";
+import { LabStrip } from "@/components/sections/LabStrip";
+import { InsightGrid } from "@/components/sections/InsightGrid";
+import { ContactBand } from "@/components/sections/ContactBand";
+
+export const metadata: Metadata = {
+  title: "V47 — Boutique AI Consulting",
+  description:
+    "We help governments and enterprises move from AI strategy to production — through executive advisory, product thinking, and working AI systems.",
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (
-    <main className="mx-auto flex max-w-container flex-1 flex-col items-start justify-center gap-4 px-5 py-32 sm:px-10">
-      <Eyebrow>Foundation milestone</Eyebrow>
-      <h1 className="t-h1 text-fg">V47</h1>
-      <p className="t-body max-w-prose text-fg-muted">
-        The design system, layout, and navigation are in place. Homepage
-        content ships in the next milestone.
-      </p>
-    </main>
+    <>
+      <Hero />
+      <TrustBar />
+      <ServiceCards />
+      <IndustrySelector />
+      <WorkGrid />
+      <MethodTimeline />
+      <LabStrip />
+      <InsightGrid limit={3} />
+      <ContactBand />
+    </>
   );
 }

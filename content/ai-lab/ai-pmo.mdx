@@ -1,0 +1,31 @@
+---
+title: "AI PMO"
+slug: "ai-pmo"
+type: "lab"
+pillar: "product-leadership"
+secondaryPillar: "enterprise-ai"
+status: "in-progress"
+summary: "An experiment in using AI to run the mechanical parts of project management — status tracking, risk surfacing, reporting — so a PMO can spend its time on judgment calls instead of status updates."
+publishedAt: "2026-07-10"
+updatedAt: "2026-07-10"
+author: "Vignesh"
+confidential: false
+---
+
+## What it does
+
+AI PMO is a working experiment in offloading the repetitive mechanics of project management — chasing status updates, assembling reports, flagging risks buried in scattered updates — to an AI layer, so the humans running the PMO can spend their time on judgment calls: what's actually at risk, what needs escalation, what to do about it.
+
+*Status: in progress. There's no public demo link yet — this entry documents the architecture and thinking as it's being built, honestly, rather than waiting for a polished launch to talk about it.*
+
+## Architecture
+
+A structured project-data layer (tasks, statuses, dependencies, updates) feeds an AI layer that summarizes state and surfaces anomalies — the AI interprets and flags, it doesn't own the source of truth for project state. *[Expand with a real architecture diagram once the system is further along.]*
+
+## Stack
+
+*[Confirm and publish the real stack — model provider, hosting, integrations — once it's stable enough to commit to writing.]*
+
+## Lessons learned so far
+
+The genuinely hard part isn't summarizing status — it's deciding what's worth flagging versus what's normal variance. An AI PMO that flags everything is as useless as a PMO that flags nothing; getting that threshold right is turning out to be more of a product-judgment problem than a modeling problem.

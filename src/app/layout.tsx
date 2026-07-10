@@ -70,9 +70,9 @@ export default function RootLayout({
           Skip to content
         </a>
         <Nav />
-        <div id="main-content" className="flex flex-1 flex-col">
+        <main id="main-content" className="flex flex-1 flex-col">
           {children}
-        </div>
+        </main>
         <Footer />
       </body>
     </html>
