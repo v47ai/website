@@ -4,7 +4,20 @@
       "Bash(npx create-next-app@latest . --typescript --tailwind --app --src-dir --import-alias \"@/*\" --yes)",
       "PowerShell(node -v)",
       "PowerShell(npm -v)",
-      "PowerShell(npx -v)"
-    ]
+      "PowerShell(npx -v)",
+      "Bash(mkdir -p docs/website docs/product docs/engineering content/case-studies content/ai-lab src/hooks src/styles)",
+      "Bash(git mv *)",
+      "Bash(mv docs/01_PRD.md docs/website/01_PRD.md)",
+      "Bash(mv docs/02_Brand_Guidelines.md docs/website/02_Brand_Guidelines.md)",
+      "Bash(mv docs/03_Information_Architecture.md docs/website/03_Information_Architecture.md)",
+      "Bash(mv docs/04_Design_System.md docs/website/04_Design_System.md)",
+      "Bash(mv docs/05_Content_Strategy.md docs/website/05_Content_Strategy.md)",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(python3 -c \"import json; json.load\\(open\\('.claude/settings.json'\\)\\)\")",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('.claude/settings.json','utf8'\\)\\); console.log\\('valid'\\)\")",
+      "Bash(git add *)"
+    ],
+    "defaultMode": "bypassPermissions"
   }
 }
