@@ -3,12 +3,13 @@ import type { Metadata } from "next";
 import { getAllEntries } from "@/lib/content";
 import { Eyebrow } from "@/components/primitives/Eyebrow";
 import { ContentList } from "@/components/sections/ContentList";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "AI Lab",
   description: "Working AI experiments from V47, with honest status on each.",
-  alternates: { canonical: "/lab" },
-};
+  path: "/lab",
+});
 
 export default function LabIndexPage() {
   const entries = getAllEntries("lab");

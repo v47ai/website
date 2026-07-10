@@ -29,12 +29,12 @@ export function Nav() {
     <>
       <motion.nav
         aria-label="Primary"
-        className="sticky top-0 z-(--z-sticky-nav) border-b border-border bg-bg/95 backdrop-blur"
+        className="sticky top-0 z-(--z-sticky-nav) border-b border-border bg-bg/95 backdrop-blur print:hidden"
         animate={prefersReducedMotion ? undefined : { y: direction === "down" ? "-100%" : "0%" }}
         transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="mx-auto flex max-w-container items-center justify-between px-5 py-4 sm:px-10">
-          <Logo className="text-xl" />
+          <Logo className="text-2xl sm:text-3xl" />
 
           <ul className="hidden items-center gap-8 md:flex">
             {NAV_LINKS.map((link) => (

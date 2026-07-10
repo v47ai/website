@@ -3,12 +3,13 @@ import type { Metadata } from "next";
 import { getAllEntries } from "@/lib/content";
 import { Eyebrow } from "@/components/primitives/Eyebrow";
 import { ContentList } from "@/components/sections/ContentList";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Methods",
   description: "How V47 thinks — the frameworks behind the delivery.",
-  alternates: { canonical: "/methods" },
-};
+  path: "/methods",
+});
 
 export default function MethodsIndexPage() {
   const entries = getAllEntries("framework");

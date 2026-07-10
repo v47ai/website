@@ -44,10 +44,10 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-bg">
+    <footer className="border-t border-border bg-bg print:hidden">
       <div className="mx-auto max-w-container px-5 py-16 sm:px-10">
         <div className="mb-12 flex flex-col gap-1.5">
-          <Logo className="text-2xl" />
+          <Logo className="text-3xl" />
           <p className="t-caption text-fg-subtle">AI consulting · Abu Dhabi</p>
         </div>
 

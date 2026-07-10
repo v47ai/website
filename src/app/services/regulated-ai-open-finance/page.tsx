@@ -4,13 +4,14 @@ import NextLink from "next/link";
 import { Eyebrow } from "@/components/primitives/Eyebrow";
 import { buttonVariants } from "@/components/primitives/Button";
 import { Reveal } from "@/components/primitives/Reveal";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Regulated AI & Open Finance Frameworks",
   description:
     "Regulated AI systems for banks, insurers, and financial infrastructure operating under CBUAE and SAMA oversight.",
-  alternates: { canonical: "/services/regulated-ai-open-finance" },
-};
+  path: "/services/regulated-ai-open-finance",
+});
 
 const APPROACH_TABLE: Array<{ constraint: string; approach: string }> = [
   {

@@ -37,6 +37,7 @@ export function ThemeToggle() {
 
   return (
     <div
+      className="print:hidden"
       style={{
         display: "flex",
         alignItems: "center",

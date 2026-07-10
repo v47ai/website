@@ -5,12 +5,13 @@ import { INDUSTRIES } from "@/lib/industries";
 import { Eyebrow } from "@/components/primitives/Eyebrow";
 import { Card } from "@/components/primitives/Card";
 import { Reveal } from "@/components/primitives/Reveal";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Industries",
   description: "We understand your sector, not just AI in the abstract.",
-  alternates: { canonical: "/industries" },
-};
+  path: "/industries",
+});
 
 export default function IndustriesIndexPage() {
   return (

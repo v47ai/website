@@ -5,12 +5,13 @@ import { Eyebrow } from "@/components/primitives/Eyebrow";
 import { Card } from "@/components/primitives/Card";
 import { buttonVariants } from "@/components/primitives/Button";
 import { Reveal } from "@/components/primitives/Reveal";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Services",
   description: "How V47 engages: from a scoped discovery workshop to a working prototype to full strategy.",
-  alternates: { canonical: "/services" },
-};
+  path: "/services",
+});
 
 const SERVICES = [
   {

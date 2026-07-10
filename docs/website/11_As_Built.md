@@ -490,7 +490,7 @@ it deviates from Part A above (by explicit owner decision, not drift).
 | `/industries` | Industries index (7 sectors) | `src/lib/industries.ts` | Live |
 | `/industries/[slug]` | 7 industry details | `src/lib/industries.ts` | Live |
 | `/contact` | Contact page | `src/app/contact/page.tsx` | Live — `mailto:`, no booking tool wired (Block 1 OQ still open) |
-| `/company-profile` | Honest "in production" placeholder | `src/app/company-profile/page.tsx` | Live — was a broken PDF link, fixed |
+| `/company-profile` | Real document — positioning, leadership, services, industries, track record, contact; light theme per Design System §8; "Download PDF" links to a generated `/company-profile.pdf` | `src/app/company-profile/page.tsx`, `public/company-profile.pdf` | Live — first working draft, explicitly labeled as such on-page; owner said "fine polish it later" |
 | `/privacy`, `/terms` | Legal boilerplate | `src/app/privacy/page.tsx`, `terms/page.tsx` | Live — flagged on-page as not counsel-reviewed |
 | `/api/think` | POST-only API behind Think With V47 | `src/app/api/think/route.ts` | Live, gated on `ANTHROPIC_API_KEY` |
 | `/sitemap.xml`, `/robots.txt` | SEO | `src/app/sitemap.ts`, `robots.ts` | Live |
@@ -677,16 +677,18 @@ endorsement of either.
 - Durable rate limiting (e.g. Upstash) recommended before high-traffic launch of Think With V47.
 - Search Console not verified (wants the custom domain live first).
 - Booking tool not chosen (`/contact` uses `mailto:`) — Block 1's open question, still open.
-- Founder portrait unresolved (Block 2's OQ-5) — no stock/casual substitute used.
+- Founder portrait unresolved (Block 2's OQ-5) — no stock/casual substitute used. Both `/about` and `/company-profile` now show an honest "Portrait pending" placeholder box instead of leaving a gap in the layout, so the page reads as intentional rather than unfinished — but the real photography is still needed.
 - `/privacy`, `/terms` are draft boilerplate, not counsel-reviewed.
-- Theme decision (Block 18) — Classic vs. Teal — not finalized.
+- Theme decision (Block 18) — Classic vs. Teal — not finalized. (Logo size was increased in Nav/Footer this session — applies to both themes equally, not a Classic-only change, since size isn't a themed token.)
 - "V47" name meaning (Block 2's OQ-1) — never explicitly resolved; site currently treats it as undecorated (Direction C, the doc's own recommendation).
 - Logo/monogram final artwork (Block 2's OQ-2) — real wordmark/favicon assets exist (`docs/website/Logo/`) and are wired in; unclear if they're considered final or still placeholder.
 - GSAP / signature draw-ins (Block 7) — not implemented; Framer Motion covers all current motion. Not a gap unless a future section specifically calls for orchestrated path-drawing.
 - Arabic/RTL (Block 2 §10) — logical CSS properties used, but `/ar` not built; correctly deferred per the doc's own "don't emit until Arabic exists" guidance.
 - ~~Tejas vs. About page reconciliation~~ — **resolved.** 120,000+ confirmed as the correct, published figure (CSI eGovernance Award 2022 + NIC/MeitY appreciation letter). About's copy updated to state it directly rather than hedge it; `/work/tejas` corrected from 128,000+ to 120,000+ to match.
 - ~~Author byline inconsistency~~ — **resolved.** "Vigneshraja Kadirvell" confirmed as the canonical name. Now consistent across the About page (H1, both JSON-LD blocks), the root Organization JSON-LD founder array, and every content file's `author` field.
-- **Justice Corner naming specificity** — still open. The rewritten case study names a "UAE federal ministry" and an "ex-McKinsey-founded strategy firm" (not by name) as the delivery partner. The source draft included a now-removed internal note flagging permission-to-publish as unconfirmed for naming the ministry even generically; confirm this framing is cleared before treating it as final.
+- ~~Justice Corner naming specificity~~ — **resolved.** Owner confirmed naming is cleared ("proudly market it — no probs"). The case study, its title, summary, and the Company Profile track-record entry now name the **UAE Ministry of Justice (MOJ)** directly rather than "a UAE federal ministry." The delivery partner remains unnamed ("an ex-McKinsey-founded strategy firm") — that specific permission wasn't addressed, so it wasn't changed.
+- **OG/social preview metadata was broken sitewide** — discovered via live audit, not from the docs: every page's `openGraph`/`twitter` tags were silently falling back to the root layout's static homepage values, because `generateMetadata()` only ever set `title`/`description`, and Next.js does not auto-populate `openGraph` from those. Confirmed via curl against production that `/work/tejas` was serving the homepage's OG card. **Fixed** — added `src/lib/metadata.ts` (`buildMetadata()`) and applied it to all 15 static/dynamic routes with their own metadata. Also fixed a duplicate-`CreativeWork`/`Article`-JSON-LD bug introduced in the Block 20 schema work (case study and insight pages had their own script tags before `ContentDetail.tsx` gained the same schema).
+- **No OG image exists anywhere** — still open. `buildMetadata()` fixes title/description/url per page; a real per-page or even single default branded OG image (`@vercel/og`) is still unbuilt. Every shared link now shows the *correct* title and description, but no image.
 
 ---
 
@@ -748,7 +750,9 @@ A large punch list and a full homepage visual-redesign brief (bento grids, girih
 | `cb324a6` | Part C content appendix added (every published word, by route) |
 | `e541aee` | Added Tejas case study (`/work/tejas`, Delivered, 128,000+ users at the time); rewrote Justice Corner as In progress (UAE federal ministry, ex-McKinsey partner, multilingual voice); cross-linked About's Tejas section to the new case study |
 | `4f1e87f` | Reconciled the two items `e541aee` flagged as open: confirmed "Vigneshraja Kadirvell" as the canonical name (About H1/JSON-LD, root Organization JSON-LD, all 8 content bylines) and 120,000+ as the correct published user figure (was inconsistently 128,000+ on `/work/tejas` vs. a hedged "internal reporting" framing on About) — both pages now state 120,000+ at the same confidence level, corroborated by the CSI eGovernance Award and NIC/MeitY appreciation letter |
-| *(this commit)* | Added two Insights articles (CBUAE Open Finance AI architecture; GCC GovTech AI procurement), both cross-linked to relevant service/case-study pages. Added `BreadcrumbList` + `Article`/`CreativeWork` JSON-LD to `ContentDetail.tsx`, closing the Block 8 SEO gap for all content templates. Triaged a large incoming punch list and homepage-redesign brief plus a complete `BlueprintStudio.tsx` component — none built or added to the repo this session; full rationale in the new Block 21 |
+| `a26570a` | Added two Insights articles (CBUAE Open Finance AI architecture; GCC GovTech AI procurement), both cross-linked to relevant service/case-study pages. Added `BreadcrumbList` + `Article`/`CreativeWork` JSON-LD to `ContentDetail.tsx`, closing the Block 8 SEO gap for all content templates. Triaged a large incoming punch list and homepage-redesign brief plus a complete `BlueprintStudio.tsx` component — none built or added to the repo this session; full rationale in Block 21 |
+| `62b261f` | Fixed duplicate JSON-LD on case study/insight pages introduced by `a26570a` |
+| *(this commit)* | Increased Nav/Footer logo size. Named the UAE Ministry of Justice (MOJ) directly in Justice Corner (owner-confirmed, no confidentiality issue) and in the new Company Profile. Rebuilt `/about` from a linear prose column into a card/grid layout with a founder-portrait placeholder box (Sharmili gets one too). Fixed a real, live-audited bug: `openGraph`/`twitter` metadata was static sitewide (every page shared the homepage's title/description/URL) — added `src/lib/metadata.ts` and applied it to all 15 routes with metadata. Built `/company-profile` as a real document (light theme per Design System §8) plus a generated, downloadable `public/company-profile.pdf`, with Nav/Footer/theme-toggle hidden via `print:hidden` so the PDF contains only the document |
 
 *(Append new rows here as work continues — one row per meaningful commit or
 batch of commits, not every individual `git commit`.)*
@@ -808,6 +812,14 @@ remains.
 ---
 
 ## C2 — About (`src/app/about/page.tsx`)
+
+**Layout note (this session):** the page was rebuilt from a single linear
+column of prose into a card/grid layout — a `PortraitPlaceholder` box
+(honest "Portrait pending" state, no stock substitute) sits beside the
+hero intro and again beside Sharmili's; track-record items render as
+`Card` grids instead of stacked `<div>`s; the Tejas section gets a
+2-column layout with a stat card (120,000+) alongside the narrative. Copy
+content is unchanged from what's listed below — only presentation changed.
 
 - Metadata description: `V47 is led by Vigneshraja Kadirvell, Founder & Principal Consultant, with Sharmili G as Co-Founder & Head of Data Platform Engineering.`
 - Eyebrow: `About` / H1: `Vigneshraja Kadirvell`
@@ -1103,10 +1115,12 @@ Opens by citing the [Tejas](/work/tejas) experience (120,000+ users, 15+ ministr
 - Caveat banner: `Draft placeholder — these terms have not been reviewed by counsel. Replace with reviewed terms before relying on this page.`
 - Body: `This website and its content are provided by V47, a boutique AI consulting practice licensed in Abu Dhabi, UAE. Content on this site is informational and does not constitute a service agreement — engagement terms are set out separately in any signed proposal or contract with V47.` / `Questions about these terms: vignesh@v47ai.com.`
 
-### `/company-profile` (`src/app/company-profile/page.tsx`)
-- Eyebrow: `Firm` / H1: `Company profile` — Badge: `In progress`
-- `A downloadable, procurement-ready PDF is in production — built from the same design system as this site, so it reads as one document family, not a separate marketing artefact.`
-- `In the meantime, everything the profile will summarize — work, methods, and how to reach us — is already on this site.`
+### `/company-profile` (`src/app/company-profile/page.tsx`) — real document, not a placeholder as of this session
+- Eyebrow: `Firm` / H1: `Company profile` · `Download PDF` button → `/company-profile.pdf` (a real generated file in `public/`, built via `page.pdf()` against this route)
+- Rendered in **light theme** regardless of the site-wide Classic/Teal toggle (`data-theme="light"` on the page's own wrapper — same mechanism as the theme toggle, just scoped to one page) per Design System §8's "Company profile PDF: light theme, same tokens."
+- Caveat banner: `This is a working draft, built from what's already verified elsewhere on this site — not yet a finished, designed artefact. Content is accurate; layout and polish are still in progress.`
+- Sections: **Positioning** (verifiable-claims statement) · **Leadership** (both founders, one-line bios) · **Services** (all 5, core + specialized) · **Industries served** (all 7) · **Track record** (Tejas — 120,000+ users/15+ ministries/CSI Award/NIC-MeitY letter; Justice Corner — UAE Ministry of Justice, MOJ; EXL/Paymentor.ai) · **Contact**.
+- Nav, Footer, and the theme-toggle bar are hidden via `print:hidden` so the downloaded PDF contains only the document itself, not site chrome.
 
 ---
 

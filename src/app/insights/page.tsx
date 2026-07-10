@@ -4,12 +4,13 @@ import type { Metadata } from "next";
 import { getAllEntries } from "@/lib/content";
 import { Eyebrow } from "@/components/primitives/Eyebrow";
 import { Reveal } from "@/components/primitives/Reveal";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Insights",
   description: "How V47 thinks about governed, production-grade enterprise AI.",
-  alternates: { canonical: "/insights" },
-};
+  path: "/insights",
+});
 
 export default function InsightsIndexPage() {
   const entries = getAllEntries("insight");

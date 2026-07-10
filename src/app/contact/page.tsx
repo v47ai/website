@@ -3,12 +3,13 @@ import type { Metadata } from "next";
 import { Eyebrow } from "@/components/primitives/Eyebrow";
 import { buttonVariants } from "@/components/primitives/Button";
 import { Divider } from "@/components/primitives/Divider";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Contact",
   description: "Book an AI discovery session, or reach V47 by email or LinkedIn.",
-  alternates: { canonical: "/contact" },
-};
+  path: "/contact",
+});
 
 const EMAIL = "vignesh@v47ai.com";
 

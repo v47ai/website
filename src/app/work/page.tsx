@@ -3,12 +3,13 @@ import type { Metadata } from "next";
 import { getAllEntries } from "@/lib/content";
 import { Eyebrow } from "@/components/primitives/Eyebrow";
 import { ContentList } from "@/components/sections/ContentList";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Work",
   description: "Case studies: real AI systems V47 has built for governments and enterprises.",
-  alternates: { canonical: "/work" },
-};
+  path: "/work",
+});
 
 export default function WorkIndexPage() {
   const entries = getAllEntries("case-study");

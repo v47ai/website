@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 
 import { Eyebrow } from "@/components/primitives/Eyebrow";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Terms",
   description: "Terms of use for the V47 website.",
-  alternates: { canonical: "/terms" },
-};
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (

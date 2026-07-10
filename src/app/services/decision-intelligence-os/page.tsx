@@ -4,13 +4,14 @@ import NextLink from "next/link";
 import { Eyebrow } from "@/components/primitives/Eyebrow";
 import { buttonVariants } from "@/components/primitives/Button";
 import { Reveal } from "@/components/primitives/Reveal";
+import { buildMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Enterprise Decision Intelligence Systems",
   description:
     "A single reasoning layer across fragmented operational data — built around your existing systems, not a replacement for them.",
-  alternates: { canonical: "/services/decision-intelligence-os" },
-};
+  path: "/services/decision-intelligence-os",
+});
 
 const APPLICATIONS = [
   {

@@ -5,6 +5,7 @@ import NextLink from "next/link";
 import { INDUSTRIES } from "@/lib/industries";
 import { Eyebrow } from "@/components/primitives/Eyebrow";
 import { buttonVariants } from "@/components/primitives/Button";
+import { buildMetadata } from "@/lib/metadata";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -19,11 +20,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const industry = INDUSTRIES.find((item) => item.slug === slug);
   if (!industry) return {};
 
-  return {
+  return buildMetadata({
     title: industry.label,
     description: industry.context,
-    alternates: { canonical: `/industries/${slug}` },
-  };
+    path: `/industries/${slug}`,
+  });
 }
 
 export default async function IndustryPage({ params }: PageProps) {

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { getAllEntries, getEntryBySlug } from "@/lib/content";
 import { ContentDetail } from "@/components/sections/ContentDetail";
+import { buildMetadata } from "@/lib/metadata";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -17,11 +18,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const entry = getEntryBySlug("case-study", slug);
   if (!entry) return {};
 
-  return {
+  return buildMetadata({
     title: entry.frontmatter.title,
     description: entry.frontmatter.summary,
-    alternates: { canonical: `/work/${slug}` },
-  };
+    path: `/work/${slug}`,
+    type: "article",
+  });
 }
 
 export default async function CaseStudyPage({ params }: PageProps) {

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { getAllEntries, getEntryBySlug } from "@/lib/content";
 import { ContentDetail } from "@/components/sections/ContentDetail";
+import { buildMetadata } from "@/lib/metadata";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -17,11 +18,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const entry = getEntryBySlug("insight", slug);
   if (!entry) return {};
 
-  return {
+  return buildMetadata({
     title: entry.frontmatter.title,
     description: entry.frontmatter.summary,
-    alternates: { canonical: `/insights/${slug}` },
-  };
+    path: `/insights/${slug}`,
+    type: "article",
+  });
 }
 
 export default async function InsightArticlePage({ params }: PageProps) {
