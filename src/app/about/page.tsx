@@ -17,7 +17,22 @@ const jsonLd = {
   name: "Vignesh",
   jobTitle: "Founder & Principal Consultant",
   worksFor: { "@type": "Organization", name: "V47" },
+  alumniOf: [
+    { "@type": "Organization", name: "EXL" },
+    { "@type": "Organization", name: "KPMG" },
+  ],
 };
+
+const TRACK_RECORD = [
+  {
+    role: "AVP of Product, EXL (Paymentor.ai)",
+    body: "Scaled an AI-powered collections and BNPL SaaS platform from initial pilots to $5M contracts, engaging directly with bank CXOs across the US and the GCC.",
+  },
+  {
+    role: "Product Lead & Consultant, KPMG",
+    body: "Led product strategy for the Government of India's CEDA analytics SaaS platform, scaling it to 128,000+ users across multiple ministries.",
+  },
+];
 
 const PRINCIPLES = [
   {
@@ -45,15 +60,16 @@ export default function AboutPage() {
       <Eyebrow>About</Eyebrow>
       <h1 className="t-h1 mt-3 text-fg">Vignesh</h1>
       <p className="t-body-l mt-4 max-w-prose text-fg-muted">
-        Founder & Principal Consultant, V47.
+        Founder & Principal Consultant, V47 — 11+ years of product
+        leadership across high-growth SaaS, fintech, and enterprise AI, now
+        directing every engagement personally.
       </p>
 
       <div className="mt-10 max-w-prose">
         <p className="t-body text-fg-muted">
-          V47 is built on 11+ years of product leadership, spanning
-          government and enterprise delivery, with a focus on taking AI
-          initiatives from strategy through to production — not just advising
-          on them.
+          V47 is a boutique by design. Clients get the person who built and
+          scaled these systems, not a junior analyst relaying someone else&apos;s
+          slide deck.
         </p>
         <p className="t-body mt-4 text-fg-muted">
           V47 is licensed to operate as an AI consulting business in Abu
@@ -66,6 +82,48 @@ export default function AboutPage() {
           ownership, data reality, and the judgment calls a demo never has to
           make. V47 is built to own that whole path, not just the parts that
           demo well.
+        </p>
+      </div>
+
+      <Divider className="my-12 max-w-prose" />
+
+      <div className="max-w-prose">
+        <h2 className="t-h3 text-fg">Proven architecture, not presentation decks</h2>
+        <p className="t-body mt-4 text-fg-muted">
+          Before founding V47, Vignesh built and scaled the kind of systems
+          most AI consultancies only pitch.
+        </p>
+        <div className="mt-8 space-y-8">
+          {TRACK_RECORD.map((item) => (
+            <div key={item.role}>
+              <h3 className="t-h4 text-fg">{item.role}</h3>
+              <p className="t-small mt-2 text-fg-muted">{item.body}</p>
+            </div>
+          ))}
+        </div>
+        <p className="t-caption mt-6 rounded-sm border border-border bg-surface px-4 py-3 text-fg-subtle">
+          These outcomes were delivered under EXL and KPMG, prior to V47&apos;s
+          founding — cited here as track record, not as V47 engagements.
+        </p>
+      </div>
+
+      <Divider className="my-12 max-w-prose" />
+
+      <div className="max-w-prose">
+        <h2 className="t-h3 text-fg">GCC regulatory fluency</h2>
+        <p className="t-body mt-4 text-fg-muted">
+          At EXL, Vignesh delivered open banking readiness assessments for
+          GCC banks — mapping API maturity and aligning product engineering
+          work with the CBUAE Open Finance Regulation and the SAMA Open
+          Banking framework. That regulatory fluency now shapes how V47
+          designs{" "}
+          <NextLink
+            href="/services/regulated-ai-open-finance"
+            className="text-interactive underline underline-offset-[3px] hover:text-azure-400"
+          >
+            regulated AI systems
+          </NextLink>{" "}
+          for financial institutions across the region.
         </p>
       </div>
 
