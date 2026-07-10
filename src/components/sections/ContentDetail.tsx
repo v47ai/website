@@ -8,6 +8,8 @@ import { Eyebrow } from "@/components/primitives/Eyebrow";
 import { buttonVariants } from "@/components/primitives/Button";
 import { Reveal } from "@/components/primitives/Reveal";
 
+const SITE_URL = "https://v47ai.com";
+
 const STATUS_MAP: Record<string, BadgeStatus> = {
   delivered: "delivered",
   "in-progress": "in-progress",
@@ -31,9 +33,53 @@ export function ContentDetail({
   showCta = true,
 }: ContentDetailProps) {
   const { frontmatter } = entry;
+  const pageUrl = `${SITE_URL}${indexHref}/${frontmatter.slug}`;
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: indexLabel, item: `${SITE_URL}${indexHref}` },
+      { "@type": "ListItem", position: 3, name: frontmatter.title, item: pageUrl },
+    ],
+  };
+
+  const contentJsonLd =
+    frontmatter.type === "insight"
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: frontmatter.title,
+          description: frontmatter.summary,
+          author: { "@type": "Person", name: frontmatter.author },
+          datePublished: frontmatter.publishedAt,
+          dateModified: frontmatter.updatedAt,
+          publisher: { "@type": "Organization", name: "V47" },
+          mainEntityOfPage: pageUrl,
+        }
+      : {
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          name: frontmatter.title,
+          description: frontmatter.summary,
+          creator: { "@type": "Person", name: frontmatter.author },
+          dateCreated: frontmatter.publishedAt,
+          dateModified: frontmatter.updatedAt,
+          url: pageUrl,
+        };
 
   return (
     <article className="mx-auto max-w-container px-5 py-20 sm:px-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contentJsonLd) }}
+      />
+
       <nav aria-label="Breadcrumb" className="t-caption text-fg-subtle">
         <NextLink href={indexHref} className="hover:text-fg">
           {indexLabel}

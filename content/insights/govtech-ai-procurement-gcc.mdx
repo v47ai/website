@@ -1,0 +1,50 @@
+---
+title: "Why GovTech AI procurement fails — and how to fix it"
+slug: "govtech-ai-procurement-gcc"
+type: "insight"
+pillar: "govtech"
+secondaryPillar: "ai-strategy"
+status: "delivered"
+industry: "government"
+summary: "Most government AI procurement processes are designed for software, not for systems that learn. The result: contracts that guarantee the wrong things, evaluate the wrong vendors, and stall before production."
+publishedAt: "2026-07-11"
+updatedAt: "2026-07-11"
+author: "Vigneshraja Kadirvell"
+confidential: false
+---
+
+Government procurement for AI systems in the GCC follows a pattern that is predictable, expensive, and almost guaranteed to produce the wrong outcome. The process is designed for software that does not change — fixed requirements, fixed deliverables, fixed acceptance criteria. AI systems are the opposite: they learn, they drift, they require continuous evaluation. The mismatch is structural, not procedural.
+
+After leading the product strategy for [TEJAS](/work/tejas) — a national analytics platform that reached 120,000+ users across 15+ Indian government ministries — and advising on multiple GCC government AI initiatives, the failure pattern is clear. Here is what goes wrong, and what a procurement process designed for AI would look like instead.
+
+## The three procurement failure modes
+
+**1. The "waterfall AI" contract.** Most government RFPs treat AI like traditional software: define requirements up front, select a vendor, accept deliverables at the end. This works for a payroll system. It fails for AI because the requirements are wrong until the data is seen, the model is trained, and the edge cases are discovered. A contract that locks in scope before the first data audit is a contract for a system that will not work.
+
+**2. The accuracy trap.** Procurement committees often evaluate AI vendors on model accuracy — the highest F1 score wins. This is the wrong metric for government AI. A model that is 95% accurate on a test dataset but cannot explain its decisions, cannot be audited, and cannot be corrected when it is wrong is not a 95% model — it is a liability. The right evaluation criteria are explainability, auditability, human override, and continuous evaluation — not accuracy alone.
+
+**3. The "pilot to nowhere" gap.** Many government AI contracts include a pilot phase but no production transition criteria. The pilot succeeds (it always does, on curated data, with a dedicated team), the vendor invoices for the pilot, and then the system sits in limbo because no one defined what "production-ready" means for an AI system. The contract ends; the system does not ship.
+
+## What a government AI procurement process should look like
+
+**Phase 1: Discovery and data audit (4–6 weeks).** Before writing a single requirement, audit the data — what exists, what quality it is, what access controls are in place, and what gaps would make an AI system unreliable. This phase produces a data readiness assessment, not a product spec. No vendor is selected here.
+
+**Phase 2: Scoped prototype (8–12 weeks).** Select 1–2 vendors for a paid prototype sprint on a narrow, well-defined use case. The deliverable is a working system a ministry official can interact with, including the governance layer — not a model. Evaluation criteria: usability by non-technical staff, explainability of outputs, robustness to real data — not accuracy on a test set.
+
+**Phase 3: Production pilot (12–16 weeks).** One vendor, one production-adjacent deployment with real data, real users, real oversight. The contract must include continuous evaluation metrics (not just initial accuracy), a defined human-in-the-loop protocol, and a clear escalation path for when the system is confidently wrong. The vendor is paid for operational support, not just delivery.
+
+**Phase 4: Scale or sunset (ongoing).** After the production pilot, a formal review: did the system deliver measurable value, is the ministry's team capable of operating it, are the governance mechanisms working. If yes, scale to additional use cases. If no, sunset the system with a documented lessons-learned report — and pay the vendor for the operational learning, not penalize them for a system correctly scoped and honestly evaluated.
+
+## The GCC-specific layer
+
+**Data sovereignty requirements.** Many GCC governments require data to remain within national boundaries — a procurement constraint that eliminates certain cloud providers and model APIs from consideration, not a "nice to have."
+
+**Local content and vendor requirements.** Some GCC jurisdictions require a percentage of contract value to flow to local vendors, or require joint ventures with local partners. For AI systems, the procurement must evaluate not just the foreign vendor's capability but the local partner's ability to operate, maintain, and govern the system after delivery.
+
+**Procurement timeline pressure.** Government procurement cycles in the GCC can run 6–12 months from RFP to contract award. In AI, 12 months is a generation. A procurement process that takes a year to select a vendor will select a vendor whose technology is already dated. The fix is not to rush procurement — it's to design for shorter evaluation cycles and continuous vendor assessment.
+
+## The practical test for procurement committees
+
+The test for a government procurement committee is not "did we follow the process?" It is "did we buy a system that gets used, that can be governed, and that delivers measurable public value?" Most GCC government AI initiatives measure the first and hope for the second and third. The procurement process should be designed to guarantee all three — which requires rethinking procurement from first principles, not adding AI clauses to a software contract template.
+
+V47 advises GCC government clients on AI procurement strategy — not as a vendor bidding for contracts, but as an independent advisor helping procurement committees design evaluation frameworks that match how AI systems actually work.
