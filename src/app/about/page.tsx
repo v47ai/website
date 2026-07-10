@@ -30,7 +30,7 @@ const TRACK_RECORD = [
   },
   {
     role: "Product Lead & Consultant, KPMG",
-    body: "Led product strategy for the Government of India's CEDA analytics SaaS platform, scaling it to 128,000+ users across multiple ministries.",
+    body: "Led product strategy for TEJAS, the Government of India's national analytics platform built under CEDA — detailed below.",
   },
 ];
 
@@ -104,6 +104,46 @@ export default function AboutPage() {
         <p className="t-caption mt-6 rounded-sm border border-border bg-surface px-4 py-3 text-fg-subtle">
           These outcomes were delivered under EXL and KPMG, prior to V47&apos;s
           founding — cited here as track record, not as V47 engagements.
+        </p>
+      </div>
+
+      <Divider className="my-12 max-w-prose" />
+
+      <div className="max-w-prose">
+        <h2 className="t-h3 text-fg">Inside TEJAS: a national analytics platform</h2>
+        <p className="t-body mt-4 text-fg-muted">
+          In 2021, India&apos;s Ministry of Electronics and Information
+          Technology (MeitY), working through the National Informatics
+          Centre (NIC) and NICSI, launched TEJAS — Technology Enabled
+          Justified Analytics Solution — under the Centre of Excellence for
+          Data Analytics (CEDA). The mandate was blunt: give government
+          departments a no-code way to turn raw administrative data into
+          working dashboards, without every ministry buying its own
+          proprietary BI software.
+        </p>
+        <p className="t-body mt-4 text-fg-muted">
+          Vignesh led product strategy for TEJAS at KPMG — shaping a
+          drag-and-drop data preparation layer, configurable dashboards with
+          department-level performance indicators, geospatial mapping
+          through Bharat Maps, and role-based access controls, all built on
+          open-source technology so departments weren&apos;t locked into a
+          commercial BI vendor. Internal reporting during that period put
+          adoption at 128,000+ users across multiple ministries; NIC&apos;s own
+          public reporting later cited over 75% of NIC-supported state
+          applications migrating to or evaluating the platform.
+        </p>
+        <p className="t-body mt-4 text-fg-muted">
+          The lesson that carries into V47&apos;s work: adoption at that scale
+          doesn&apos;t come from a better model, it comes from a product built
+          around how a government department actually works — access
+          control, reporting cadence, and a rollout path a risk-averse
+          ministry can sign off on.
+        </p>
+        <p className="t-caption mt-6 rounded-sm border border-border bg-surface px-4 py-3 text-fg-subtle">
+          Platform facts sourced from NIC and MeitY public materials and
+          independent policy reporting; adoption figures during Vignesh&apos;s
+          tenure are cited from internal reporting at the time, not a
+          published NIC statistic.
         </p>
       </div>
 
