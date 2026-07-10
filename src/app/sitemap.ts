@@ -1,10 +1,22 @@
 import type { MetadataRoute } from "next";
 
 import { getAllEntries } from "@/lib/content";
+import { INDUSTRIES } from "@/lib/industries";
 
 const SITE_URL = "https://v47ai.com";
 
-const STATIC_ROUTES = ["/", "/work", "/lab", "/methods", "/insights", "/about", "/contact", "/company-profile"];
+const STATIC_ROUTES = [
+  "/",
+  "/work",
+  "/lab",
+  "/methods",
+  "/insights",
+  "/about",
+  "/contact",
+  "/company-profile",
+  "/services",
+  "/industries",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticEntries: MetadataRoute.Sitemap = STATIC_ROUTES.map((route) => ({
@@ -30,5 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...staticEntries, ...contentEntries];
+  const industryEntries: MetadataRoute.Sitemap = INDUSTRIES.map((industry) => ({
+    url: `${SITE_URL}/industries/${industry.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.5,
+  }));
+
+  return [...staticEntries, ...contentEntries, ...industryEntries];
 }

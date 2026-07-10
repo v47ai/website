@@ -6,6 +6,7 @@ import { ServiceCards } from "@/components/sections/ServiceCards";
 import { IndustrySelector } from "@/components/sections/IndustrySelector";
 import { WorkGrid } from "@/components/sections/WorkGrid";
 import { MethodTimeline } from "@/components/sections/MethodTimeline";
+import { ThinkWithV47 } from "@/components/sections/ThinkWithV47";
 import { LabStrip } from "@/components/sections/LabStrip";
 import { InsightGrid } from "@/components/sections/InsightGrid";
 import { ContactBand } from "@/components/sections/ContactBand";
@@ -26,6 +27,7 @@ export default function Home() {
       <IndustrySelector />
       <WorkGrid />
       <MethodTimeline />
+      <ThinkWithV47 />
       <LabStrip />
       <InsightGrid limit={3} />
       <ContactBand />
