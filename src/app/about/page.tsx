@@ -7,11 +7,12 @@ import { buttonVariants } from "@/components/primitives/Button";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "V47 is led by Vignesh, Founder & Principal Consultant.",
+  description:
+    "V47 is led by Vignesh, Founder & Principal Consultant, with Sharmili G as Co-Founder & Head of Data Platform Engineering.",
   alternates: { canonical: "/about" },
 };
 
-const jsonLd = {
+const vigneshJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Vignesh",
@@ -22,6 +23,34 @@ const jsonLd = {
     { "@type": "Organization", name: "KPMG" },
   ],
 };
+
+const sharmiliJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Sharmili G",
+  jobTitle: "Co-Founder & Head of Data Platform Engineering",
+  worksFor: { "@type": "Organization", name: "V47" },
+  alumniOf: [
+    { "@type": "Organization", name: "Tech Mahindra" },
+    { "@type": "Organization", name: "Cognizant" },
+    { "@type": "Organization", name: "Wipro" },
+  ],
+};
+
+const SHARMILI_TRACK_RECORD = [
+  {
+    role: "Lead Data Engineer, Tech Mahindra (Thirdware Solutions)",
+    body: "Architected the migration of Ford Motor Credit's enterprise data warehouse to Google Cloud Platform — GCP Dataflow and BigQuery pipelines built to support IFRS 9/CECL regulatory reporting, led by a team of 5+ engineers.",
+  },
+  {
+    role: "Senior ETL Consultant, OCBC Bank & AmBank Group (Malaysia)",
+    body: "Built OCBC's New Statistical Reporting System for Bank Negara Malaysia's compliance requirements, and AmBank's Central Credit Reference Information System — regulator-facing data infrastructure for two of Malaysia's national banking authorities.",
+  },
+  {
+    role: "Senior Software Developer, Wipro Technologies",
+    body: "Delivered fraud-detection and reconciliation systems for Lloyds Banking Group, Citibank, and State Street, including the Falcon platform for payment card fraud mitigation.",
+  },
+];
 
 const TRACK_RECORD = [
   {
@@ -54,7 +83,11 @@ export default function AboutPage() {
     <div className="mx-auto max-w-container px-5 py-20 sm:px-10">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(vigneshJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(sharmiliJsonLd) }}
       />
 
       <Eyebrow>About</Eyebrow>
@@ -164,6 +197,45 @@ export default function AboutPage() {
             regulated AI systems
           </NextLink>{" "}
           for financial institutions across the region.
+        </p>
+      </div>
+
+      <Divider className="my-12 max-w-prose" />
+
+      <div className="max-w-prose">
+        <Eyebrow>Leadership</Eyebrow>
+        <h2 className="t-h2 mt-3 text-fg">Sharmili G</h2>
+        <p className="t-body-l mt-2 text-fg-muted">
+          Co-Founder & Head of Data Platform Engineering, V47 — 12+ years
+          building enterprise data platforms and cloud migrations across
+          banking, financial services, and automotive.
+        </p>
+        <p className="t-body mt-6 text-fg-muted">
+          Where Vignesh scopes the regulatory and product strategy, Sharmili
+          builds the data platform underneath it. Most AI vendors outsource
+          one half of that pairing; V47 doesn&apos;t have to.
+        </p>
+
+        <div className="mt-8 space-y-8">
+          {SHARMILI_TRACK_RECORD.map((item) => (
+            <div key={item.role}>
+              <h3 className="t-h4 text-fg">{item.role}</h3>
+              <p className="t-small mt-2 text-fg-muted">{item.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <p className="t-body mt-6 text-fg-muted">
+          Certified across all three major cloud platforms — AWS, Azure, and
+          Google Cloud — with an MS in Software Engineering from BITS
+          Pilani. That breadth is what lets V47 commit to a cloud target
+          without a separate vendor for the migration itself.
+        </p>
+
+        <p className="t-caption mt-6 rounded-sm border border-border bg-surface px-4 py-3 text-fg-subtle">
+          These outcomes were delivered under Tech Mahindra, Cognizant, and
+          Wipro, prior to V47&apos;s founding — cited here as track record, not
+          as V47 engagements.
         </p>
       </div>
 
