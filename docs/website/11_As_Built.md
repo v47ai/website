@@ -472,9 +472,9 @@ it deviates from Part A above (by explicit owner decision, not drift).
 | Route | Purpose | Source | Status |
 |---|---|---|---|
 | `/` | Homepage — 9 sections per Block 6's order, plus Think With V47 inserted | `src/app/page.tsx` | Live |
-| `/about` | Founder (Vignesh) + Co-Founder (Sharmili G) bios, firm principles | `src/app/about/page.tsx` | Live |
+| `/about` | Founder (Vigneshraja Kadirvell) + Co-Founder (Sharmili G) bios, firm principles | `src/app/about/page.tsx` | Live |
 | `/work` | Case studies index | `src/lib/content.ts` (`case-study`) | Live |
-| `/work/tejas` | Case study — Delivered, 128,000+ users, 15+ ministries | `content/case-studies/tejas.mdx` | Live |
+| `/work/tejas` | Case study — Delivered, 120,000+ users, 15+ ministries | `content/case-studies/tejas.mdx` | Live |
 | `/work/justice-corner` | Case study — In progress (prototype demonstrated, not production) | `content/case-studies/justice-corner.mdx` | Live |
 | `/work/executive-intelligence-os` | Case study — In progress | `content/case-studies/executive-intelligence-os.mdx` | Live |
 | `/methods` | Frameworks index | `src/lib/content.ts` (`framework`) | Live |
@@ -527,15 +527,16 @@ ContentList (shared index shell), ThinkWithV47.
 
 MDX frontmatter matches Block 5's contract. Content actually published:
 
-- **Case studies (3):** Tejas (Delivered — 128,000+ users, 15+ ministries,
+- **Case studies (3):** Tejas (Delivered — 120,000+ users, 15+ ministries,
   CSI eGovernance Award 2022, NIC/MeitY appreciation letter), Justice Corner
   (**status corrected to In progress** — a prototype demonstrated to a UAE
   federal ministry, not yet in production; do not upgrade to Delivered until
   it actually is), Executive Intelligence OS (In progress) — named projects
   from the founder's own history, not invented; all three use the fixed
-  8-part structure. Tejas's author byline uses the founder's full legal name
-  ("Vigneshraja Kadirvell") rather than "Vignesh" — inconsistent with the
-  rest of the site's display name; not reconciled, flagged in Block 19.
+  8-part structure. "Vigneshraja Kadirvell" is now the confirmed canonical
+  name and is consistent across every content byline, the About page, and
+  both JSON-LD blocks (previously flagged as inconsistent in Block 19 —
+  now resolved).
 - **Lab entry (1):** AI PMO (In progress).
 - **Framework (1):** AI Discovery Framework.
 - **Insights (3):** one per pillar (ai-strategy, ai-governance,
@@ -582,14 +583,16 @@ building, deliberately:
 Block 3's T9 About template specified a single founder narrative. As built,
 `/about` covers two people:
 
-- **Vignesh** — Founder & Principal Consultant. Track record: EXL/
+- **Vigneshraja Kadirvell** — Founder & Principal Consultant. Track record: EXL/
   Paymentor.ai (AI collections/BNPL SaaS, $5M contracts, GCC bank CXOs),
   KPMG/TEJAS (Government of India national analytics platform under CEDA).
 - **TEJAS narrative** — independently researched and sourced from public
   NIC/MeitY materials and policy reporting (launch year, acronym, features,
-  NIC's own 75%+ state-application-adoption stat). The 128,000-user figure
-  is explicitly labeled as internal reporting during Vignesh's tenure, not a
-  published NIC statistic — kept distinct from the independently-sourced claim.
+  NIC's own 75%+ state-application-adoption stat). The 120,000-user figure
+  is confirmed as a published result, corroborated by a CSI eGovernance
+  Award (2022) and a Government of India (NIC/MeitY) appreciation letter —
+  now stated directly on both `/about` and the dedicated `/work/tejas` case
+  study (Block 12) rather than hedged.
 - **GCC regulatory fluency** — CBUAE Open Finance Regulation / SAMA Open
   Banking framework experience, cross-linked to
   `/services/regulated-ai-open-finance`.
@@ -598,7 +601,7 @@ Block 3's T9 About template specified a single founder narrative. As built,
   regulator-facing systems — BNM NSRS, CCRIS), Wipro (Lloyds/Citibank/State
   Street). Selected-projects grid: ECL, ELMM, BNM NSRS Reporting, CCRIS,
   FALCON Debit, Enterprise Bigdata Platform. Source: her own resume, treated
-  as primary-source career fact the same way Vignesh's history is handled.
+  as primary-source career fact the same way Vigneshraja Kadirvell's history is handled.
 - Both carry `Person` JSON-LD; the root `ProfessionalService` JSON-LD in
   `layout.tsx` carries a `founder` array listing both (Block 8's spec only
   anticipated one `Person`).
@@ -678,9 +681,9 @@ endorsement of either.
 - Logo/monogram final artwork (Block 2's OQ-2) — real wordmark/favicon assets exist (`docs/website/Logo/`) and are wired in; unclear if they're considered final or still placeholder.
 - GSAP / signature draw-ins (Block 7) — not implemented; Framer Motion covers all current motion. Not a gap unless a future section specifically calls for orchestrated path-drawing.
 - Arabic/RTL (Block 2 §10) — logical CSS properties used, but `/ar` not built; correctly deferred per the doc's own "don't emit until Arabic exists" guidance.
-- **Tejas vs. About page reconciliation** — the same 128,000-user claim now exists at two confidence levels (About: hedged as internal reporting; `/work/tejas`: stated flatly as a Result, backed by the CSI Award/appreciation letter). Worth aligning the framing in a future pass.
-- **Author byline inconsistency** — `/work/tejas` and the rewritten `/work/justice-corner` use `author: "Vigneshraja Kadirvell"` (full legal name); every other content file and the About page display name use `"Vignesh"`. Not reconciled — confirm whether this is intentional before more content ships under one name or the other.
-- **Justice Corner naming specificity** — the rewritten case study names a "UAE federal ministry" and an "ex-McKinsey-founded strategy firm" (not by name) as the delivery partner. The source draft included a now-removed internal note flagging permission-to-publish as unconfirmed for naming the ministry even generically; confirm this framing is cleared before treating it as final.
+- ~~Tejas vs. About page reconciliation~~ — **resolved.** 120,000+ confirmed as the correct, published figure (CSI eGovernance Award 2022 + NIC/MeitY appreciation letter). About's copy updated to state it directly rather than hedge it; `/work/tejas` corrected from 128,000+ to 120,000+ to match.
+- ~~Author byline inconsistency~~ — **resolved.** "Vigneshraja Kadirvell" confirmed as the canonical name. Now consistent across the About page (H1, both JSON-LD blocks), the root Organization JSON-LD founder array, and every content file's `author` field.
+- **Justice Corner naming specificity** — still open. The rewritten case study names a "UAE federal ministry" and an "ex-McKinsey-founded strategy firm" (not by name) as the delivery partner. The source draft included a now-removed internal note flagging permission-to-publish as unconfirmed for naming the ministry even generically; confirm this framing is cleared before treating it as final.
 
 ---
 
@@ -705,7 +708,8 @@ endorsement of either.
 | `c9fd7ac` | This file created (as-built record, route/component inventory) |
 | `4457984` | This file expanded into the full consolidated Vision+PRD+As-Built record |
 | `cb324a6` | Part C content appendix added (every published word, by route) |
-| *(this commit)* | Added Tejas case study (`/work/tejas`, Delivered, 128,000+ users); rewrote Justice Corner as In progress (UAE federal ministry, ex-McKinsey partner, multilingual voice); cross-linked About's Tejas section to the new case study; updated Blocks 12/14/19 and the C4 content appendix to match |
+| `e541aee` | Added Tejas case study (`/work/tejas`, Delivered, 128,000+ users at the time); rewrote Justice Corner as In progress (UAE federal ministry, ex-McKinsey partner, multilingual voice); cross-linked About's Tejas section to the new case study |
+| *(this commit)* | Reconciled the two items `e541aee` flagged as open: confirmed "Vigneshraja Kadirvell" as the canonical name (About H1/JSON-LD, root Organization JSON-LD, all 8 content bylines) and 120,000+ as the correct published user figure (was inconsistently 128,000+ on `/work/tejas` vs. a hedged "internal reporting" framing on About) — both pages now state 120,000+ at the same confidence level, corroborated by the CSI eGovernance Award and NIC/MeitY appreciation letter |
 
 *(Append new rows here as work continues — one row per meaningful commit or
 batch of commits, not every individual `git commit`.)*
@@ -766,8 +770,8 @@ remains.
 
 ## C2 — About (`src/app/about/page.tsx`)
 
-- Metadata description: `V47 is led by Vignesh, Founder & Principal Consultant, with Sharmili G as Co-Founder & Head of Data Platform Engineering.`
-- Eyebrow: `About` / H1: `Vignesh`
+- Metadata description: `V47 is led by Vigneshraja Kadirvell, Founder & Principal Consultant, with Sharmili G as Co-Founder & Head of Data Platform Engineering.`
+- Eyebrow: `About` / H1: `Vigneshraja Kadirvell`
 - Standfirst: `Founder & Principal Consultant, V47 — 11+ years of product leadership across high-growth SaaS, fintech, and enterprise AI, now directing every engagement personally.`
 - Body:
   > V47 is a boutique by design. Clients get the person who built and scaled these systems, not a junior analyst relaying someone else's slide deck.
@@ -777,7 +781,7 @@ remains.
   > The practice exists on a simple premise: most AI initiatives don't fail on the model, they fail on everything around it — governance, ownership, data reality, and the judgment calls a demo never has to make. V47 is built to own that whole path, not just the parts that demo well.
 
 **"Proven architecture, not presentation decks"**
-> Before founding V47, Vignesh built and scaled the kind of systems most AI consultancies only pitch.
+> Before founding V47, Vigneshraja Kadirvell built and scaled the kind of systems most AI consultancies only pitch.
 
 - **AVP of Product, EXL (Paymentor.ai)** — Scaled an AI-powered collections and BNPL SaaS platform from initial pilots to $5M contracts, engaging directly with bank CXOs across the US and the GCC.
 - **Product Lead & Consultant, KPMG** — Led product strategy for TEJAS, the Government of India's national analytics platform built under CEDA — detailed below.
@@ -786,19 +790,19 @@ remains.
 **"Inside TEJAS: a national analytics platform"**
 > In 2021, India's Ministry of Electronics and Information Technology (MeitY), working through the National Informatics Centre (NIC) and NICSI, launched TEJAS — Technology Enabled Justified Analytics Solution — under the Centre of Excellence for Data Analytics (CEDA). The mandate was blunt: give government departments a no-code way to turn raw administrative data into working dashboards, without every ministry buying its own proprietary BI software.
 >
-> Vignesh led product strategy for TEJAS at KPMG — shaping a drag-and-drop data preparation layer, configurable dashboards with department-level performance indicators, geospatial mapping through Bharat Maps, and role-based access controls, all built on open-source technology so departments weren't locked into a commercial BI vendor. Internal reporting during that period put adoption at 128,000+ users across multiple ministries; NIC's own public reporting later cited over 75% of NIC-supported state applications migrating to or evaluating the platform.
+> Vigneshraja Kadirvell led product strategy for TEJAS at KPMG — shaping a drag-and-drop data preparation layer, configurable dashboards with department-level performance indicators, geospatial mapping through Bharat Maps, and role-based access controls, all built on open-source technology so departments weren't locked into a commercial BI vendor. Adoption reached 120,000+ users across 15+ ministries — recognized with a CSI eGovernance Award (2022) and a Government of India (NIC/MeitY) appreciation letter; NIC's own public reporting separately cited over 75% of NIC-supported state applications migrating to or evaluating the platform.
 >
 > The lesson that carries into V47's work: adoption at that scale doesn't come from a better model, it comes from a product built around how a government department actually works — access control, reporting cadence, and a rollout path a risk-averse ministry can sign off on.
-- Caveat: `Platform facts sourced from NIC and MeitY public materials and independent policy reporting; adoption figures during Vignesh's tenure are cited from internal reporting at the time, not a published NIC statistic.`
-- Link (added): `See the full Tejas case study →` → `/work/tejas` (see C4 — the dedicated case study states the same 128,000+ figure flatly as a Result, backed by a CSI eGovernance Award and NIC/MeitY appreciation letter, a stronger confidence level than this section's hedge).
+- Caveat: `Platform facts sourced from NIC and MeitY public materials, independent policy reporting, and the CSI eGovernance Award and NIC/MeitY appreciation letter recognizing this work.`
+- Link (added): `See the full Tejas case study →` → `/work/tejas` (see C4 — About and the dedicated case study now state the same 120,000+ figure at the same confidence level; no longer a hedge-vs-flat-claim mismatch).
 
 **"GCC regulatory fluency"**
-> At EXL, Vignesh delivered open banking readiness assessments for GCC banks — mapping API maturity and aligning product engineering work with the CBUAE Open Finance Regulation and the SAMA Open Banking framework. That regulatory fluency now shapes how V47 designs [regulated AI systems](/services/regulated-ai-open-finance) for financial institutions across the region.
+> At EXL, Vigneshraja Kadirvell delivered open banking readiness assessments for GCC banks — mapping API maturity and aligning product engineering work with the CBUAE Open Finance Regulation and the SAMA Open Banking framework. That regulatory fluency now shapes how V47 designs [regulated AI systems](/services/regulated-ai-open-finance) for financial institutions across the region.
 
 **Leadership — Sharmili G**
 - Eyebrow: `Leadership` / H2: `Sharmili G`
 - Standfirst: `Co-Founder & Head of Data Platform Engineering, V47 — 12+ years building enterprise data platforms and cloud migrations across banking, financial services, and automotive.`
-- `Where Vignesh scopes the regulatory and product strategy, Sharmili builds the data platform underneath it. Most AI vendors outsource one half of that pairing; V47 doesn't have to.`
+- `Where Vigneshraja Kadirvell scopes the regulatory and product strategy, Sharmili builds the data platform underneath it. Most AI vendors outsource one half of that pairing; V47 doesn't have to.`
 
 Track record:
 - **Lead Data Engineer, Tech Mahindra (Thirdware Solutions)** — Architected the migration of Ford Motor Credit's enterprise data warehouse to Google Cloud Platform — GCP Dataflow and BigQuery pipelines built to support IFRS 9/CECL regulatory reporting, led by a team of 5+ engineers.
@@ -879,8 +883,8 @@ Specialized two:
 
 ## C4 — Case studies (`content/case-studies/*.mdx`)
 
-### Tejas (`/work/tejas`) — status: Delivered — resultLabel/resultMetric: Users / 128,000+
-`summary`: A national no-code business-intelligence platform scaled to 128,000+ users across 15+ government ministries, positioned as a near-zero-cost alternative to commercial BI — led by V47's founder at KPMG.
+### Tejas (`/work/tejas`) — status: Delivered — resultLabel/resultMetric: Users / 120,000+
+`summary`: A national no-code business-intelligence platform scaled to 120,000+ users across 15+ government ministries, positioned as a near-zero-cost alternative to commercial BI — led by V47's founder at KPMG.
 
 Header lines: `Status: delivered.` / `Attribution: led by V47's founder as Lead Product Manager at KPMG, for the Government of India. Recognized with a CSI eGovernance Award (2022) and a Government of India (NIC / MeitY) appreciation letter.`
 
@@ -890,10 +894,10 @@ Header lines: `Status: delivered.` / `Attribution: led by V47's founder as Lead 
 - **Approach** — Zero-to-one product leadership: strategy, roadmap, and a feature set specified against what commercial BI actually offered, so the platform was a real alternative rather than a lesser one. Drag-and-drop dashboards with 45+ chart types, predictive analytics, role-based access, and REST and database connectors. Adoption was treated as a product workstream in its own right — onboarding and multi-ministry rollout were designed, not assumed.
 - **Architecture** — A no-code/low-code business-intelligence platform: a drag-and-drop dashboard builder over a charting engine spanning 45+ chart types, a predictive-analytics layer, role-based access control for a multi-ministry user base, and REST and database connectors to reach data across ministry systems.
 - **Technology** — No-code/low-code BI platform; drag-and-drop dashboard builder (45+ chart types); predictive analytics; role-based access control; REST and database connectors.
-- **Results** — 128,000+ users. 15+ government ministries. Positioned as a near-zero-cost alternative to commercial BI licensing at national scale. CSI eGovernance Award, 2022. Government of India (NIC/MeitY) appreciation letter.
+- **Results** — 120,000+ users. 15+ government ministries. Positioned as a near-zero-cost alternative to commercial BI licensing at national scale. CSI eGovernance Award, 2022. Government of India (NIC/MeitY) appreciation letter.
 - **Key Learnings** — At national scale in government, adoption is a product problem, not a modeling one. The features that drove Tejas were the unglamorous ones — role-based access, onboarding, connectors that reached the data ministries actually held, an interface a non-analyst could operate. Someone has to own the question of whether the thing gets used — that is product leadership, and it is usually what decides the outcome.
 
-*Note: this is the same TEJAS/CEDA platform narrated in prose on `/about` (Block 16/C2) — that section now links here (`See the full Tejas case study →`). The two don't fully reconcile: About's version hedges the 128,000-user figure as "internal reporting... not a published NIC statistic"; this case study states it flatly as a Result, backed instead by the CSI Award and NIC/MeitY appreciation letter as corroboration. Both are live simultaneously — worth reconciling the framing in a future pass rather than leaving two slightly different confidence levels on the same claim.*
+*Note: this is the same TEJAS/CEDA platform narrated in prose on `/about` (Block 16/C2) — that section now links here (`See the full Tejas case study →`). 120,000+ is confirmed as the correct, published figure (CSI eGovernance Award 2022 + NIC/MeitY appreciation letter); both pages now state it at the same confidence level — the earlier "internal reporting, not published" hedge on About has been removed.*
 
 ### Justice Corner (`/work/justice-corner`) — status: In progress (**changed from Delivered**) — resultLabel/resultMetric: Status / In progress
 `summary`: A governed, multilingual generative-AI legal-awareness service for a UAE federal ministry — prototype demonstrated, built with an ex-McKinsey-founded strategy partner.
@@ -1080,7 +1084,7 @@ Header lines: `Status: in progress — prototype demonstrated to the ministry, n
   "url": "https://v47ai.com",
   "sameAs": ["https://www.linkedin.com/company/v47"],
   "founder": [
-    { "name": "Vignesh", "jobTitle": "Founder & Principal Consultant" },
+    { "name": "Vigneshraja Kadirvell", "jobTitle": "Founder & Principal Consultant" },
     { "name": "Sharmili G", "jobTitle": "Co-Founder & Head of Data Platform Engineering" }
   ]
 }

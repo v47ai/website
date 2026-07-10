@@ -47,7 +47,7 @@ const organizationJsonLd = {
   url: SITE_URL,
   sameAs: ["https://www.linkedin.com/company/v47"],
   founder: [
-    { "@type": "Person", name: "Vignesh", jobTitle: "Founder & Principal Consultant" },
+    { "@type": "Person", name: "Vigneshraja Kadirvell", jobTitle: "Founder & Principal Consultant" },
     { "@type": "Person", name: "Sharmili G", jobTitle: "Co-Founder & Head of Data Platform Engineering" },
   ],
 };

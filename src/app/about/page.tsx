@@ -8,14 +8,14 @@ import { buttonVariants } from "@/components/primitives/Button";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "V47 is led by Vignesh, Founder & Principal Consultant, with Sharmili G as Co-Founder & Head of Data Platform Engineering.",
+    "V47 is led by Vigneshraja Kadirvell, Founder & Principal Consultant, with Sharmili G as Co-Founder & Head of Data Platform Engineering.",
   alternates: { canonical: "/about" },
 };
 
 const vigneshJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Vignesh",
+  name: "Vigneshraja Kadirvell",
   jobTitle: "Founder & Principal Consultant",
   worksFor: { "@type": "Organization", name: "V47" },
   alumniOf: [
@@ -118,7 +118,7 @@ export default function AboutPage() {
       />
 
       <Eyebrow>About</Eyebrow>
-      <h1 className="t-h1 mt-3 text-fg">Vignesh</h1>
+      <h1 className="t-h1 mt-3 text-fg">Vigneshraja Kadirvell</h1>
       <p className="t-body-l mt-4 max-w-prose text-fg-muted">
         Founder & Principal Consultant, V47 — 11+ years of product
         leadership across high-growth SaaS, fintech, and enterprise AI, now
@@ -150,8 +150,8 @@ export default function AboutPage() {
       <div className="max-w-prose">
         <h2 className="t-h3 text-fg">Proven architecture, not presentation decks</h2>
         <p className="t-body mt-4 text-fg-muted">
-          Before founding V47, Vignesh built and scaled the kind of systems
-          most AI consultancies only pitch.
+          Before founding V47, Vigneshraja Kadirvell built and scaled the
+          kind of systems most AI consultancies only pitch.
         </p>
         <div className="mt-8 space-y-8">
           {TRACK_RECORD.map((item) => (
@@ -182,15 +182,17 @@ export default function AboutPage() {
           proprietary BI software.
         </p>
         <p className="t-body mt-4 text-fg-muted">
-          Vignesh led product strategy for TEJAS at KPMG — shaping a
-          drag-and-drop data preparation layer, configurable dashboards with
-          department-level performance indicators, geospatial mapping
-          through Bharat Maps, and role-based access controls, all built on
-          open-source technology so departments weren&apos;t locked into a
-          commercial BI vendor. Internal reporting during that period put
-          adoption at 128,000+ users across multiple ministries; NIC&apos;s own
-          public reporting later cited over 75% of NIC-supported state
-          applications migrating to or evaluating the platform.
+          Vigneshraja Kadirvell led product strategy for TEJAS at KPMG —
+          shaping a drag-and-drop data preparation layer, configurable
+          dashboards with department-level performance indicators,
+          geospatial mapping through Bharat Maps, and role-based access
+          controls, all built on open-source technology so departments
+          weren&apos;t locked into a commercial BI vendor. Adoption reached
+          120,000+ users across 15+ ministries — recognized with a CSI
+          eGovernance Award (2022) and a Government of India (NIC/MeitY)
+          appreciation letter; NIC&apos;s own public reporting separately cited
+          over 75% of NIC-supported state applications migrating to or
+          evaluating the platform.
         </p>
         <p className="t-body mt-4 text-fg-muted">
           The lesson that carries into V47&apos;s work: adoption at that scale
@@ -200,10 +202,9 @@ export default function AboutPage() {
           ministry can sign off on.
         </p>
         <p className="t-caption mt-6 rounded-sm border border-border bg-surface px-4 py-3 text-fg-subtle">
-          Platform facts sourced from NIC and MeitY public materials and
-          independent policy reporting; adoption figures during Vignesh&apos;s
-          tenure are cited from internal reporting at the time, not a
-          published NIC statistic.
+          Platform facts sourced from NIC and MeitY public materials,
+          independent policy reporting, and the CSI eGovernance Award and
+          NIC/MeitY appreciation letter recognizing this work.
         </p>
         <NextLink
           href="/work/tejas"
@@ -218,7 +219,7 @@ export default function AboutPage() {
       <div className="max-w-prose">
         <h2 className="t-h3 text-fg">GCC regulatory fluency</h2>
         <p className="t-body mt-4 text-fg-muted">
-          At EXL, Vignesh delivered open banking readiness assessments for
+          At EXL, Vigneshraja Kadirvell delivered open banking readiness assessments for
           GCC banks — mapping API maturity and aligning product engineering
           work with the CBUAE Open Finance Regulation and the SAMA Open
           Banking framework. That regulatory fluency now shapes how V47
@@ -244,7 +245,7 @@ export default function AboutPage() {
           banking, financial services, and automotive.
         </p>
         <p className="t-body mt-6 text-fg-muted">
-          Where Vignesh scopes the regulatory and product strategy, Sharmili
+          Where Vigneshraja Kadirvell scopes the regulatory and product strategy, Sharmili
           builds the data platform underneath it. Most AI vendors outsource
           one half of that pairing; V47 doesn&apos;t have to.
         </p>
