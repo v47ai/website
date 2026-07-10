@@ -52,6 +52,33 @@ const SHARMILI_TRACK_RECORD = [
   },
 ];
 
+const SHARMILI_PROJECTS = [
+  {
+    name: "ECL — Ford Motor Credit",
+    detail: "ETL development for IFRS 9/CECL compliance, calculating and reporting Expected Credit Loss on a quarterly basis.",
+  },
+  {
+    name: "ELMM — Ford Motor Credit",
+    detail: "Migrated the enterprise data warehouse from Teradata to Google Cloud Platform via cloud dataflow pipelines.",
+  },
+  {
+    name: "BNM NSRS Reporting — OCBC Bank",
+    detail: "Standardized statistical reporting infrastructure to Bank Negara Malaysia's requirements.",
+  },
+  {
+    name: "CCRIS — AmBank Group",
+    detail: "Automated credit-related data processing across participating financial institutions for the Credit Bureau.",
+  },
+  {
+    name: "FALCON Debit — Lloyds Banking Group",
+    detail: "Payment card fraud detection and mitigation across payment methods.",
+  },
+  {
+    name: "Enterprise Bigdata Platform — OCBC Bank",
+    detail: "Migrated the data store platform to a real-time data hub via a Hadoop staging layer.",
+  },
+];
+
 const TRACK_RECORD = [
   {
     role: "AVP of Product, EXL (Paymentor.ai)",
@@ -225,7 +252,17 @@ export default function AboutPage() {
           ))}
         </div>
 
-        <p className="t-body mt-6 text-fg-muted">
+        <h3 className="t-h4 mt-8 text-fg">Selected projects</h3>
+        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {SHARMILI_PROJECTS.map((project) => (
+            <div key={project.name} className="rounded-sm border border-border p-4">
+              <p className="t-small text-fg">{project.name}</p>
+              <p className="t-caption mt-2 text-fg-subtle">{project.detail}</p>
+            </div>
+          ))}
+        </div>
+
+        <p className="t-body mt-8 text-fg-muted">
           Certified across all three major cloud platforms — AWS, Azure, and
           Google Cloud — with an MS in Software Engineering from BITS
           Pilani. That breadth is what lets V47 commit to a cloud target
@@ -233,9 +270,9 @@ export default function AboutPage() {
         </p>
 
         <p className="t-caption mt-6 rounded-sm border border-border bg-surface px-4 py-3 text-fg-subtle">
-          These outcomes were delivered under Tech Mahindra, Cognizant, and
-          Wipro, prior to V47&apos;s founding — cited here as track record, not
-          as V47 engagements.
+          These outcomes were delivered under Tech Mahindra, Cognizant, OCBC,
+          AmBank, and Wipro, prior to V47&apos;s founding — cited here as track
+          record, not as V47 engagements.
         </p>
       </div>
 

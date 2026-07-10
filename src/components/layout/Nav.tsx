@@ -11,6 +11,8 @@ import { MobileMenuTrigger } from "@/components/layout/MobileMenuTrigger";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 
 const NAV_LINKS = [
+  { label: "Services", href: "/services" },
+  { label: "Industries", href: "/industries" },
   { label: "Work", href: "/work" },
   { label: "Methods", href: "/methods" },
   { label: "Lab", href: "/lab" },
