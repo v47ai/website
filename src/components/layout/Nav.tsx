@@ -61,6 +61,21 @@ export function Nav() {
             className="md:hidden"
           />
         </div>
+
+        <div className="overflow-x-auto border-t border-border px-5 py-2 md:hidden">
+          <ul className="flex gap-5 whitespace-nowrap">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <NextLink
+                  href={link.href}
+                  className="t-caption text-fg-muted transition-colors duration-fast hover:text-fg"
+                >
+                  {link.label}
+                </NextLink>
+              </li>
+            ))}
+          </ul>
+        </div>
       </motion.nav>
 
       <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} links={NAV_LINKS} />
