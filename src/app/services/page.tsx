@@ -36,6 +36,23 @@ const SERVICES = [
   },
 ];
 
+const SPECIALIZED_SERVICES = [
+  {
+    title: "Regulated AI & Open Finance Frameworks",
+    structure: ["Audit-trail engineering", "Consent architecture", "Data residency"],
+    description:
+      "For banks, insurers, and financial infrastructure operating under CBUAE and SAMA oversight.",
+    href: "/services/regulated-ai-open-finance",
+  },
+  {
+    title: "Enterprise Decision Intelligence Systems",
+    structure: ["Ontology mapping", "Scenario simulation", "Human-in-the-loop orchestration"],
+    description:
+      "A reasoning layer across fragmented operational data, built around your existing systems.",
+    href: "/services/decision-intelligence-os",
+  },
+];
+
 export default function ServicesIndexPage() {
   return (
     <div className="mx-auto max-w-container px-5 py-20 sm:px-10">
@@ -57,6 +74,32 @@ export default function ServicesIndexPage() {
           <Reveal key={service.title} delay={index * 0.05}>
             <Card className="flex h-full flex-col gap-4">
               <h2 className="t-h4 text-fg">{service.title}</h2>
+              <p className="t-small text-fg-muted">{service.description}</p>
+              <ul className="t-caption flex flex-wrap gap-2 text-fg-subtle">
+                {service.structure.map((item) => (
+                  <li key={item} className="rounded-full border border-border px-3 py-1">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <NextLink href={service.href} className="t-small mt-auto text-interactive underline underline-offset-[3px] hover:text-azure-400">
+                Learn more →
+              </NextLink>
+            </Card>
+          </Reveal>
+        ))}
+      </div>
+
+      <div className="mt-20">
+        <Eyebrow>Specialized</Eyebrow>
+        <h2 className="t-h2 mt-3 text-fg">For specific regulatory and operational contexts.</h2>
+      </div>
+
+      <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {SPECIALIZED_SERVICES.map((service, index) => (
+          <Reveal key={service.title} delay={index * 0.05}>
+            <Card className="flex h-full flex-col gap-4">
+              <h3 className="t-h4 text-fg">{service.title}</h3>
               <p className="t-small text-fg-muted">{service.description}</p>
               <ul className="t-caption flex flex-wrap gap-2 text-fg-subtle">
                 {service.structure.map((item) => (

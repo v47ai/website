@@ -15,6 +15,8 @@ const STATIC_ROUTES = [
   "/contact",
   "/company-profile",
   "/services",
+  "/services/regulated-ai-open-finance",
+  "/services/decision-intelligence-os",
   "/industries",
 ];
 
