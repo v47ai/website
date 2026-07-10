@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
+import { Analytics } from "@/components/Analytics";
 import { display, body, mono } from "@/lib/fonts";
 import "./globals.css";
 
@@ -74,6 +75,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

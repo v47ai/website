@@ -39,23 +39,25 @@ public/          Static assets
 
 ## Current phase
 
-**Sprint 0 — Repository restructuring.** The repo has just been reorganized to
-separate website docs from future product/engineering docs and to scaffold
-directories for upcoming content types. No website functionality has changed
-as part of this sprint.
+**V1 live.** All seven milestones in `CLAUDE.md`'s build order are built and
+deployed to Vercel. The custom domain (`v47ai.com`) isn't connected yet — live
+at the Vercel production alias in the meantime. See `PROJECT_STATUS.md` for
+the full status, including what's intentionally still flagged rather than
+fabricated (case study specifics, founder portrait, booking tool, analytics
+IDs).
 
 ## Current milestone
 
-Per the build order in `CLAUDE.md`, the next milestone is **Milestone 1:
-Foundation & design system** (tokens, Tailwind config, fonts, primitives, Nav,
-Footer, layout, JSON-LD Organization, sitemap/robots). It has not started yet.
-See `PROJECT_STATUS.md` for live status.
+None queued — the V1 build order is complete. Remaining work is either the
+blocked items in `PROJECT_STATUS.md` (domain, analytics IDs, booking tool) or
+Phase 5–6 scope explicitly deferred by `docs/website/09_Execution_Roadmap.md`.
 
 ## Technology stack
 
-Next.js 15 (App Router) · TypeScript · Tailwind CSS · shadcn/ui ·
-Framer Motion + GSAP · MDX content · next/font (Newsreader, Inter, JetBrains
-Mono) · Vercel · GA4 + Microsoft Clarity.
+Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · shadcn/ui primitives ·
+Framer Motion · MDX content (`gray-matter` + `next-mdx-remote`) · next/font
+(Newsreader, Inter, JetBrains Mono) · Vercel · GA4 + Microsoft Clarity
+(scaffolded, activates once real IDs are set as env vars).
 
 No WordPress, no page builders, no third-party templates — everything is
 custom-built.
@@ -76,15 +78,16 @@ custom-built.
 ## Roadmap
 
 High-level build order (see `docs/website/09_Execution_Roadmap.md` for full
-detail):
+detail) — all seven are built:
 
-1. Foundation & design system
-2. Homepage
-3. One flagship AI Lab entry
-4. Two real case studies
-5. About + Contact + Methods index + one Framework
-6. Insights index + 2–3 articles
-7. Deploy to Vercel; wire GA4 + Clarity + Search Console
+1. ✅ Foundation & design system
+2. ✅ Homepage
+3. ✅ One flagship AI Lab entry
+4. ✅ Two real case studies
+5. ✅ About + Contact + Methods index + one Framework
+6. ✅ Insights index + 2–3 articles
+7. ✅ Deploy to Vercel — domain, analytics IDs, and Search Console are the
+   remaining blocked items (see `PROJECT_STATUS.md`)
 
 Product-line docs in `docs/product/` and engineering standards in
 `docs/engineering/` are placeholders for future phases and are not yet
