@@ -205,6 +205,12 @@ export default function AboutPage() {
           tenure are cited from internal reporting at the time, not a
           published NIC statistic.
         </p>
+        <NextLink
+          href="/work/tejas"
+          className="t-small mt-4 inline-block text-interactive underline underline-offset-[3px] hover:text-azure-400"
+        >
+          See the full Tejas case study →
+        </NextLink>
       </div>
 
       <Divider className="my-12 max-w-prose" />

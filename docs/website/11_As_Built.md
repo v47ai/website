@@ -474,7 +474,8 @@ it deviates from Part A above (by explicit owner decision, not drift).
 | `/` | Homepage — 9 sections per Block 6's order, plus Think With V47 inserted | `src/app/page.tsx` | Live |
 | `/about` | Founder (Vignesh) + Co-Founder (Sharmili G) bios, firm principles | `src/app/about/page.tsx` | Live |
 | `/work` | Case studies index | `src/lib/content.ts` (`case-study`) | Live |
-| `/work/justice-corner` | Case study — Delivered | `content/case-studies/justice-corner.mdx` | Live |
+| `/work/tejas` | Case study — Delivered, 128,000+ users, 15+ ministries | `content/case-studies/tejas.mdx` | Live |
+| `/work/justice-corner` | Case study — In progress (prototype demonstrated, not production) | `content/case-studies/justice-corner.mdx` | Live |
 | `/work/executive-intelligence-os` | Case study — In progress | `content/case-studies/executive-intelligence-os.mdx` | Live |
 | `/methods` | Frameworks index | `src/lib/content.ts` (`framework`) | Live |
 | `/methods/ai-discovery-framework` | Framework detail | `content/methods/ai-discovery-framework.mdx` | Live |
@@ -526,9 +527,15 @@ ContentList (shared index shell), ThinkWithV47.
 
 MDX frontmatter matches Block 5's contract. Content actually published:
 
-- **Case studies (2):** Justice Corner (Delivered), Executive Intelligence OS
-  (In progress) — named projects from the founder's own history, not
-  invented; both use the fixed 8-part structure.
+- **Case studies (3):** Tejas (Delivered — 128,000+ users, 15+ ministries,
+  CSI eGovernance Award 2022, NIC/MeitY appreciation letter), Justice Corner
+  (**status corrected to In progress** — a prototype demonstrated to a UAE
+  federal ministry, not yet in production; do not upgrade to Delivered until
+  it actually is), Executive Intelligence OS (In progress) — named projects
+  from the founder's own history, not invented; all three use the fixed
+  8-part structure. Tejas's author byline uses the founder's full legal name
+  ("Vigneshraja Kadirvell") rather than "Vignesh" — inconsistent with the
+  rest of the site's display name; not reconciled, flagged in Block 19.
 - **Lab entry (1):** AI PMO (In progress).
 - **Framework (1):** AI Discovery Framework.
 - **Insights (3):** one per pillar (ai-strategy, ai-governance,
@@ -671,6 +678,9 @@ endorsement of either.
 - Logo/monogram final artwork (Block 2's OQ-2) — real wordmark/favicon assets exist (`docs/website/Logo/`) and are wired in; unclear if they're considered final or still placeholder.
 - GSAP / signature draw-ins (Block 7) — not implemented; Framer Motion covers all current motion. Not a gap unless a future section specifically calls for orchestrated path-drawing.
 - Arabic/RTL (Block 2 §10) — logical CSS properties used, but `/ar` not built; correctly deferred per the doc's own "don't emit until Arabic exists" guidance.
+- **Tejas vs. About page reconciliation** — the same 128,000-user claim now exists at two confidence levels (About: hedged as internal reporting; `/work/tejas`: stated flatly as a Result, backed by the CSI Award/appreciation letter). Worth aligning the framing in a future pass.
+- **Author byline inconsistency** — `/work/tejas` and the rewritten `/work/justice-corner` use `author: "Vigneshraja Kadirvell"` (full legal name); every other content file and the About page display name use `"Vignesh"`. Not reconciled — confirm whether this is intentional before more content ships under one name or the other.
+- **Justice Corner naming specificity** — the rewritten case study names a "UAE federal ministry" and an "ex-McKinsey-founded strategy firm" (not by name) as the delivery partner. The source draft included a now-removed internal note flagging permission-to-publish as unconfirmed for naming the ministry even generically; confirm this framing is cleared before treating it as final.
 
 ---
 
@@ -693,7 +703,9 @@ endorsement of either.
 | `05398e6` | Design-preview theme toggle (V47 Classic vs. Teal) + new logo mark |
 | `41302b4` | Mobile nav — quick-link strip surfaced outside the hamburger |
 | `c9fd7ac` | This file created (as-built record, route/component inventory) |
-| *(this commit)* | This file expanded into the full consolidated Vision+PRD+As-Built record |
+| `4457984` | This file expanded into the full consolidated Vision+PRD+As-Built record |
+| `cb324a6` | Part C content appendix added (every published word, by route) |
+| *(this commit)* | Added Tejas case study (`/work/tejas`, Delivered, 128,000+ users); rewrote Justice Corner as In progress (UAE federal ministry, ex-McKinsey partner, multilingual voice); cross-linked About's Tejas section to the new case study; updated Blocks 12/14/19 and the C4 content appendix to match |
 
 *(Append new rows here as work continues — one row per meaningful commit or
 batch of commits, not every individual `git commit`.)*
@@ -778,6 +790,7 @@ remains.
 >
 > The lesson that carries into V47's work: adoption at that scale doesn't come from a better model, it comes from a product built around how a government department actually works — access control, reporting cadence, and a rollout path a risk-averse ministry can sign off on.
 - Caveat: `Platform facts sourced from NIC and MeitY public materials and independent policy reporting; adoption figures during Vignesh's tenure are cited from internal reporting at the time, not a published NIC statistic.`
+- Link (added): `See the full Tejas case study →` → `/work/tejas` (see C4 — the dedicated case study states the same 128,000+ figure flatly as a Result, backed by a CSI eGovernance Award and NIC/MeitY appreciation letter, a stronger confidence level than this section's hedge).
 
 **"GCC regulatory fluency"**
 > At EXL, Vignesh delivered open banking readiness assessments for GCC banks — mapping API maturity and aligning product engineering work with the CBUAE Open Finance Regulation and the SAMA Open Banking framework. That regulatory fluency now shapes how V47 designs [regulated AI systems](/services/regulated-ai-open-finance) for financial institutions across the region.
@@ -866,17 +879,35 @@ Specialized two:
 
 ## C4 — Case studies (`content/case-studies/*.mdx`)
 
-### Justice Corner (`/work/justice-corner`) — status: Delivered
-`summary`: An AI-assisted platform built to help people navigate legal processes without a lawyer in the room.
+### Tejas (`/work/tejas`) — status: Delivered — resultLabel/resultMetric: Users / 128,000+
+`summary`: A national no-code business-intelligence platform scaled to 128,000+ users across 15+ government ministries, positioned as a near-zero-cost alternative to commercial BI — led by V47's founder at KPMG.
 
-- **Client Context** — Justice Corner is a legal-technology initiative built to make legal processes more navigable for people who cannot afford — or do not need — full legal representation for every step.
-- **Business Challenge** — Legal processes are procedurally complex and written for lawyers, not the people going through them. Most self-represented users lose time and confidence navigating forms, deadlines, and jurisdiction-specific procedure, and existing legal-tech tools tend to either oversimplify (generic templates) or underserve (a search box).
-- **Objectives** — Give a non-lawyer user a clear, procedurally accurate path through a legal process. Keep the system honest about what it can and cannot advise on. Build something a real user could complete a real task in, not a chatbot demo.
-- **Approach** — V47 designed the product around the user's actual task sequence — not a general-purpose legal chatbot. The system decomposes a legal process into its constituent steps, surfaces the right guidance and forms at the right step, and uses AI to interpret user input into that structured process rather than to generate open-ended legal advice.
-- **Architecture** — A structured, step-driven application layer sits in front of the AI components. The process engine — not the model — owns the source of truth for where a user is in a legal process; the AI's job is to interpret free-form input into that structure and to generate guidance within it, never to originate advice unprompted by the defined steps.
-- **Technology** — An LLM-based interpretation layer sits on top of a deterministic process engine, rather than the model driving the interaction end to end. We publish specific vendor and infrastructure detail on a case-by-case basis — ask us directly if that's relevant to your evaluation.
-- **Results** — Delivered and in use. Consistent with V47's verifiable-claims standard, we don't publish usage or outcome numbers without a source a buyer could check — ask us for current specifics in a session.
-- **Key Learnings** — Procedural accuracy matters more than conversational fluency for this kind of tool — users trust a system that gets the steps right over one that sounds articulate. Keeping the AI's role bounded to interpretation and guidance, rather than open-ended advice, was the right call for both trust and liability.
+Header lines: `Status: delivered.` / `Attribution: led by V47's founder as Lead Product Manager at KPMG, for the Government of India. Recognized with a CSI eGovernance Award (2022) and a Government of India (NIC / MeitY) appreciation letter.`
+
+- **Client Context** — The Government of India needed decision-intelligence and dashboards across its ministries, and was paying for it the expensive way — commercial BI licensing, per seat, at national scale. The work described here was led by V47's founder as Lead Product Manager at KPMG, taking the platform, named Tejas, from zero to one.
+- **Business Challenge** — BI licensing does not scale gracefully across a government. Every ministry that wanted dashboards added licence cost, and the users who needed them — programme officers, not analysts — were rarely equipped to use analyst-grade tools. The data itself sat in separate systems across separate ministries. An indigenous, no-code platform that non-technical officials could actually operate, at a fraction of the licensing cost, was the goal. The hard part was never the charting engine. It was adoption across fifteen ministries by people who had never built a dashboard.
+- **Objectives** — Build a national no-code/low-code BI platform to a Tableau- and Power-BI-grade feature bar. Reach non-technical government users without training them into analysts. Position the platform as a near-zero-cost alternative to commercial BI licensing. Drive genuine adoption across multiple ministries, not a launch and a silence.
+- **Approach** — Zero-to-one product leadership: strategy, roadmap, and a feature set specified against what commercial BI actually offered, so the platform was a real alternative rather than a lesser one. Drag-and-drop dashboards with 45+ chart types, predictive analytics, role-based access, and REST and database connectors. Adoption was treated as a product workstream in its own right — onboarding and multi-ministry rollout were designed, not assumed.
+- **Architecture** — A no-code/low-code business-intelligence platform: a drag-and-drop dashboard builder over a charting engine spanning 45+ chart types, a predictive-analytics layer, role-based access control for a multi-ministry user base, and REST and database connectors to reach data across ministry systems.
+- **Technology** — No-code/low-code BI platform; drag-and-drop dashboard builder (45+ chart types); predictive analytics; role-based access control; REST and database connectors.
+- **Results** — 128,000+ users. 15+ government ministries. Positioned as a near-zero-cost alternative to commercial BI licensing at national scale. CSI eGovernance Award, 2022. Government of India (NIC/MeitY) appreciation letter.
+- **Key Learnings** — At national scale in government, adoption is a product problem, not a modeling one. The features that drove Tejas were the unglamorous ones — role-based access, onboarding, connectors that reached the data ministries actually held, an interface a non-analyst could operate. Someone has to own the question of whether the thing gets used — that is product leadership, and it is usually what decides the outcome.
+
+*Note: this is the same TEJAS/CEDA platform narrated in prose on `/about` (Block 16/C2) — that section now links here (`See the full Tejas case study →`). The two don't fully reconcile: About's version hedges the 128,000-user figure as "internal reporting... not a published NIC statistic"; this case study states it flatly as a Result, backed instead by the CSI Award and NIC/MeitY appreciation letter as corroboration. Both are live simultaneously — worth reconciling the framing in a future pass rather than leaving two slightly different confidence levels on the same claim.*
+
+### Justice Corner (`/work/justice-corner`) — status: In progress (**changed from Delivered**) — resultLabel/resultMetric: Status / In progress
+`summary`: A governed, multilingual generative-AI legal-awareness service for a UAE federal ministry — prototype demonstrated, built with an ex-McKinsey-founded strategy partner.
+
+Header lines: `Status: in progress — prototype demonstrated to the ministry, not yet in production.` / `Partner: delivered with an ex-McKinsey-founded strategy firm.`
+
+- **Client Context** — A UAE federal ministry wanted to make legal information accessible to the public — across a population that reads and speaks several languages, and in a domain where a wrong or ungoverned answer is not a minor error but a liability. The engagement was run with an ex-McKinsey-founded strategy partner; V47's founder authored the technical solution and led the AI and conversational engineering.
+- **Business Challenge** — Legal information is public in principle and inaccessible in practice. It sits in dense documents, assumes prior knowledge, and rarely exists in the languages a resident actually speaks. A generic chatbot is the wrong answer to this: in a justice context, a confidently wrong response, an unauditable one, or one that strays outside approved content is a reputational and regulatory risk the ministry cannot carry.
+- **Objectives** — Give the public a legal-awareness service they can actually use, in the languages they speak. Keep every response inside content the ministry has approved — no free-ranging generation. Support voice interaction in Arabic, Tamil, and Urdu. Make the system auditable and safe by design, not by later review.
+- **Approach** — Governance was treated as an architecture decision, not a policy document written after the build. Before scoping generation, the line the system would never cross was drawn: it can surface, explain, and point to approved legal information; it does not give legal advice or decide anything. Content governance ran in parallel with engineering, so the ministry approved the knowledge base the system draws from rather than auditing outputs after the fact. A working prototype — multilingual, voice-enabled, governed — was built and demonstrated to the ministry.
+- **Architecture** — A retrieval-augmented generation design anchored to a ministry-approved knowledge base, so the model answers from a controlled corpus rather than open generation. A multilingual voice layer handles Arabic, Tamil, and Urdu. Governance is built into the path: explicit boundaries on what it may say unsupervised, an audit trail of what it retrieved and returned, and a defined route for when it is confidently wrong.
+- **Technology** — Governed generative AI and retrieval-augmented generation; LLM orchestration and evaluation; retrieval over an approved knowledge base; multilingual voice (Arabic, Tamil, Urdu); content-governance controls and audit-grade logging.
+- **Results** — A governed, multilingual, voice-enabled prototype was demonstrated to the ministry, with a content-governance model the ministry approved. Explicitly not claimed as production: "this is a demonstrated prototype, not a production deployment, and the case study will be updated only when that changes."
+- **Key Learnings** — Governance in a regulated environment is a design problem wearing a policy label. The decisions that make an AI system defensible — where the human sits, what gets logged, what the system may say unsupervised — are architecture, and retrofitting them after a demo lands well is far more expensive than designing for them on day one.
 
 ### Executive Intelligence OS (`/work/executive-intelligence-os`) — status: In progress
 `summary`: A working system to give executives a single, governed view across the information they'd otherwise chase across tools and teams.

@@ -1,50 +1,54 @@
 ---
-title: "Justice Corner"
+title: "A governed legal-awareness service for a UAE federal ministry"
 slug: "justice-corner"
 type: "case-study"
 pillar: "govtech"
-secondaryPillar: "enterprise-ai"
-status: "delivered"
+secondaryPillar: "ai-governance"
+status: "in-progress"
 industry: "legal"
-summary: "An AI-assisted platform built to help people navigate legal processes without a lawyer in the room."
+summary: "A governed, multilingual generative-AI legal-awareness service for a UAE federal ministry — prototype demonstrated, built with an ex-McKinsey-founded strategy partner."
 publishedAt: "2026-07-10"
-updatedAt: "2026-07-10"
-author: "Vignesh"
+updatedAt: "2026-07-11"
+author: "Vigneshraja Kadirvell"
 confidential: false
 resultLabel: "Status"
-resultMetric: "Delivered"
+resultMetric: "In progress"
 ---
 
-## Client Context
+**Status: in progress — prototype demonstrated to the ministry, not yet in production.**
+**Partner: delivered with an ex-McKinsey-founded strategy firm.**
 
-Justice Corner is a legal-technology initiative built to make legal processes more navigable for people who cannot afford — or do not need — full legal representation for every step.
+## Client context
 
-## Business Challenge
+A UAE federal ministry wanted to make legal information accessible to the public — across a population that reads and speaks several languages, and in a domain where a wrong or ungoverned answer is not a minor error but a liability. The engagement was run with an ex-McKinsey-founded strategy partner; V47's founder authored the technical solution and led the AI and conversational engineering.
 
-Legal processes are procedurally complex and written for lawyers, not the people going through them. Most self-represented users lose time and confidence navigating forms, deadlines, and jurisdiction-specific procedure, and existing legal-tech tools tend to either oversimplify (generic templates) or underserve (a search box).
+## Business challenge
+
+Legal information is public in principle and inaccessible in practice. It sits in dense documents, assumes prior knowledge, and rarely exists in the languages a resident actually speaks. A generic chatbot is the wrong answer to this: in a justice context, a confidently wrong response, an unauditable one, or one that strays outside approved content is a reputational and regulatory risk the ministry cannot carry. The problem was never whether a model could answer legal questions. It was whether an institution could stand behind every answer it gave.
 
 ## Objectives
 
-- Give a non-lawyer user a clear, procedurally accurate path through a legal process.
-- Keep the system honest about what it can and cannot advise on.
-- Build something a real user could complete a real task in, not a chatbot demo.
+- Give the public a legal-awareness service they can actually use, in the languages they speak.
+- Keep every response inside content the ministry has approved — no free-ranging generation.
+- Support voice interaction in Arabic, Tamil, and Urdu.
+- Make the system auditable and safe by design, not by later review.
 
 ## Approach
 
-V47 designed the product around the user's actual task sequence — not a general-purpose legal chatbot. The system decomposes a legal process into its constituent steps, surfaces the right guidance and forms at the right step, and uses AI to interpret user input into that structured process rather than to generate open-ended legal advice.
+We treated governance as an architecture decision, not a policy document written after the build. Before scoping generation, we drew the line the system would never cross: it can surface, explain, and point to approved legal information; it does not give legal advice or decide anything. Content governance ran in parallel with engineering, so the ministry approved the knowledge base the system draws from rather than auditing outputs after the fact. A working prototype — multilingual, voice-enabled, governed — was built and demonstrated to the ministry.
 
 ## Architecture
 
-A structured, step-driven application layer sits in front of the AI components. The process engine — not the model — owns the source of truth for where a user is in a legal process; the AI's job is to interpret free-form input into that structure and to generate guidance within it, never to originate advice unprompted by the defined steps.
+A retrieval-augmented generation design anchored to a ministry-approved knowledge base, so the model answers from a controlled corpus rather than open generation. A multilingual voice layer handles Arabic, Tamil, and Urdu. Governance is built into the path, not bolted on: the system has explicit boundaries on what it may say unsupervised, an audit trail of what it retrieved and returned, and a defined route for the case every AI system eventually hits — when it is confidently wrong. Four questions governed the design throughout: who is accountable when the system is wrong, what it may decide versus only recommend, what the audit trail records, and what happens when it errs.
 
 ## Technology
 
-An LLM-based interpretation layer sits on top of a deterministic process engine, rather than the model driving the interaction end to end. We publish specific vendor and infrastructure detail on a case-by-case basis — ask us directly if that's relevant to your evaluation.
+Governed generative AI and retrieval-augmented generation; LLM orchestration and evaluation; retrieval over an approved knowledge base; multilingual voice (Arabic, Tamil, Urdu); content-governance controls and audit-grade logging.
 
 ## Results
 
-Delivered and in use. Consistent with V47's verifiable-claims standard, we don't publish usage or outcome numbers without a source a buyer could check — ask us for current specifics in a session.
+A governed, multilingual, voice-enabled prototype was demonstrated to the ministry, with a content-governance model the ministry approved. We are deliberate about what we claim here: this is a demonstrated prototype, not a production deployment, and the case study will be updated only when that changes. The result worth naming is not a metric — it is that an institution in a regulated domain could see, before committing to production, exactly how the system stays inside the boundaries it set.
 
-## Key Learnings
+## Key learnings
 
-Procedural accuracy matters more than conversational fluency for this kind of tool — users trust a system that gets the steps right over one that sounds articulate. Keeping the AI's role bounded to interpretation and guidance, rather than open-ended advice, was the right call for both trust and liability.
+Governance in a regulated environment is a design problem wearing a policy label. The decisions that make an AI system defensible — where the human sits, what gets logged, what the system may say unsupervised — are architecture, and retrofitting them after a demo lands well is far more expensive than designing for them on day one. Multilingual voice in a justice context also raises the accuracy bar rather than lowering it: a service that speaks three languages has to be right in all three. And the line between recommend and decide is where most governance failures actually originate — drawing it early, in code, is what lets an institution trust the system enough to ship it.
