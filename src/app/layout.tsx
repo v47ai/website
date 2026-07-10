@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { Analytics } from "@/components/Analytics";
-import { display, body, mono } from "@/lib/fonts";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { display, body, mono, plexMono } from "@/lib/fonts";
 import "./globals.css";
 
 const SITE_URL = "https://v47ai.com";
@@ -59,7 +60,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${display.variable} ${body.variable} ${mono.variable} h-full antialiased`}
+      className={`${display.variable} ${body.variable} ${mono.variable} ${plexMono.variable} h-full antialiased`}
     >
       <head>
         <script
@@ -68,6 +69,7 @@ export default function RootLayout({
         />
       </head>
       <body className="flex min-h-full flex-col">
+        <ThemeToggle />
         <a
           href="#main-content"
           className="sr-only focus-visible:not-sr-only focus-visible:fixed focus-visible:top-4 focus-visible:left-4 focus-visible:z-(--z-toast) focus-visible:rounded-sm focus-visible:bg-surface-raised focus-visible:px-4 focus-visible:py-2 focus-visible:text-fg"

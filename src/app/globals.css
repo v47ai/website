@@ -86,6 +86,48 @@
   --interactive: #2a5fc0;
 }
 
+/*
+ * ---- "Teal" preview theme (design comparison only — not a shipped brand) ----
+ * Toggled by ThemeToggle.tsx via data-theme="teal" on <html>. Overrides the
+ * same semantic variables the rest of the system already reads, so every
+ * component re-skins with zero component-level changes.
+ */
+[data-theme="teal"] {
+  --bg: #ffffff;
+  --surface: #f7f8fa;
+  --surface-raised: #ffffff;
+  --border: #e6e9ef;
+  --border-strong: #d3d8e2;
+  --fg: #0d1117;
+  --fg-muted: #4b5563;
+  --fg-subtle: #6b7280;
+  --accent: #00ced1;
+  --interactive: #2a5fc0;
+
+  --brass-400: #33d9db;
+  --brass-500: #00ced1;
+  --brass-600: #00a3a5;
+
+  --node-accent: #7ac67e;
+
+  --font-display: var(--font-body);
+  --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", Menlo, monospace;
+
+  --radius-md: 8px;
+  --radius-lg: 8px;
+
+  --shadow-1: 0 1px 2px rgba(13, 17, 23, 0.06);
+  --shadow-2: 0 8px 24px rgba(13, 17, 23, 0.08);
+  --ring: 0 0 0 2px #ffffff, 0 0 0 4px var(--interactive);
+}
+
+.logo-icon {
+  display: none;
+}
+[data-theme="teal"] .logo-icon {
+  display: inline-flex;
+}
+
 /* ---- Reduced motion ---- */
 @media (prefers-reduced-motion: reduce) {
   *,
