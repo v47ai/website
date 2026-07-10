@@ -1,0 +1,47 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="V47 social card">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500&family=JetBrains+Mono:wght@400&display=swap');
+  </style>
+  <defs>
+    <linearGradient id="depth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0E121B"/>
+      <stop offset="1" stop-color="#0A0D14"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#depth)"/>
+
+  <!-- girih, bleeding off the right edge -->
+  <g transform="translate(1040,300) scale(1.6) translate(-200,-200)" opacity="0.5" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <g stroke="#262E3D" stroke-width="1" opacity="0.6">
+      <line x1="200" y1="200" x2="200" y2="50"/>
+      <line x1="200" y1="200" x2="288.17" y2="78.65"/>
+      <line x1="200" y1="200" x2="342.66" y2="153.65"/>
+      <line x1="200" y1="200" x2="342.66" y2="246.35"/>
+      <line x1="200" y1="200" x2="288.17" y2="321.35"/>
+      <line x1="200" y1="200" x2="200" y2="350"/>
+      <line x1="200" y1="200" x2="111.83" y2="321.35"/>
+      <line x1="200" y1="200" x2="57.34" y2="246.35"/>
+      <line x1="200" y1="200" x2="57.34" y2="153.65"/>
+      <line x1="200" y1="200" x2="111.83" y2="78.65"/>
+    </g>
+    <path d="M200,50 L288.17,78.65 L342.66,153.65 L342.66,246.35 L288.17,321.35 L200,350 L111.83,321.35 L57.34,246.35 L57.34,153.65 L111.83,78.65 Z"
+          stroke="#333C4E" stroke-width="1.25" opacity="0.7"/>
+    <path d="M200,50 L342.66,246.35 L111.83,321.35 L111.83,78.65 L342.66,153.65 L200,350 L57.34,153.65 L288.17,78.65 L288.17,321.35 L57.34,246.35 Z"
+          stroke="#C9A65C" stroke-width="1.5" opacity="0.7"/>
+  </g>
+
+  <!-- eyebrow -->
+  <text x="80" y="150" font-family="'JetBrains Mono', ui-monospace, monospace"
+        font-size="22" letter-spacing="6" fill="#C9A65C">BOUTIQUE AI CONSULTING · ABU DHABI</text>
+
+  <!-- headline (swap per page in the dynamic route) -->
+  <text x="78" y="322" font-family="Newsreader, Georgia, serif" font-size="86" font-weight="500" letter-spacing="-2" fill="#EAEEF6">Building AI-Native</text>
+  <text x="78" y="412" font-family="Newsreader, Georgia, serif" font-size="86" font-weight="500" letter-spacing="-2" fill="#EAEEF6">Enterprises.</text>
+
+  <line x1="82" y1="468" x2="182" y2="468" stroke="#C9A65C" stroke-width="2"/>
+
+  <!-- wordmark + domain -->
+  <text x="80" y="558" font-family="Newsreader, Georgia, serif" font-size="46" font-weight="500" letter-spacing="-1" fill="#EAEEF6">V<tspan fill="#C9A65C" font-weight="400">47</tspan></text>
+  <text x="1120" y="556" text-anchor="end" font-family="'JetBrains Mono', ui-monospace, monospace"
+        font-size="20" letter-spacing="3" fill="#6C7789">v47ai.com</text>
+</svg>

@@ -4,6 +4,16 @@ This file loads at the start of every Claude Code session. It is the operating
 contract for building the V47 digital HQ. Read it fully, then read `/docs`
 before writing any code.
 
+## Project Constitution
+
+Before every planning or implementation task, read:
+
+docs/00_PROJECT_VISION.md
+
+This document is the highest-priority design, engineering, and product authority.
+
+If any instruction conflicts with this document, the Project Vision takes precedence.
+
 ## What this project is
 V47 — a boutique AI consulting practice licensed in Abu Dhabi. This repo is the
 website (v47ai.com): a **sovereign-grade** digital HQ for GCC government and

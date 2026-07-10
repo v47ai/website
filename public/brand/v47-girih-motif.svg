@@ -1,0 +1,25 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="V47 girih motif">
+  <rect width="400" height="400" fill="#0A0D14"/>
+  <g fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <!-- radial hairlines: the 'wireframe of a structure' -->
+    <g stroke="#262E3D" stroke-width="1" opacity="0.55">
+      <line x1="200" y1="200" x2="200" y2="50"/>
+      <line x1="200" y1="200" x2="288.17" y2="78.65"/>
+      <line x1="200" y1="200" x2="342.66" y2="153.65"/>
+      <line x1="200" y1="200" x2="342.66" y2="246.35"/>
+      <line x1="200" y1="200" x2="288.17" y2="321.35"/>
+      <line x1="200" y1="200" x2="200" y2="350"/>
+      <line x1="200" y1="200" x2="111.83" y2="321.35"/>
+      <line x1="200" y1="200" x2="57.34" y2="246.35"/>
+      <line x1="200" y1="200" x2="57.34" y2="153.65"/>
+      <line x1="200" y1="200" x2="111.83" y2="78.65"/>
+    </g>
+    <!-- outer decagon -->
+    <path d="M200,50 L288.17,78.65 L342.66,153.65 L342.66,246.35 L288.17,321.35 L200,350 L111.83,321.35 L57.34,246.35 L57.34,153.65 L111.83,78.65 Z"
+          stroke="#333C4E" stroke-width="1.25" opacity="0.7"/>
+    <!-- {10/3} decagram: the 10-point star, drawn as one continuous interlaced line -->
+    <path d="M200,50 L342.66,246.35 L111.83,321.35 L111.83,78.65 L342.66,153.65 L200,350 L57.34,153.65 L288.17,78.65 L288.17,321.35 L57.34,246.35 Z"
+          stroke="#C9A65C" stroke-width="1.5" opacity="0.7"/>
+    <circle cx="200" cy="200" r="3.5" fill="#C9A65C" stroke="none" opacity="0.85"/>
+  </g>
+</svg>

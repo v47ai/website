@@ -16,7 +16,22 @@
       "Skill(update-config:*)",
       "Bash(python3 -c \"import json; json.load\\(open\\('.claude/settings.json'\\)\\)\")",
       "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\('.claude/settings.json','utf8'\\)\\); console.log\\('valid'\\)\")",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(npm run *)",
+      "PowerShell(npm run lint 2>&1)",
+      "PowerShell(npm run build 2>&1)",
+      "PowerShell(npm run dev)",
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(chromium-cli --help)",
+      "Bash(npx --yes playwright --version)",
+      "PowerShell(npx --yes playwright --version 2>&1)",
+      "PowerShell(Get-Command npm)",
+      "PowerShell(Get-Command node)",
+      "PowerShell(& npm.cmd exec -- playwright --version 2>&1)",
+      "PowerShell(& npm.cmd exec -- playwright install chromium --with-deps 2>&1)"
     ],
     "defaultMode": "bypassPermissions"
   }
