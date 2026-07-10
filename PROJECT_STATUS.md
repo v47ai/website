@@ -3,7 +3,12 @@
 This file is the single source of truth for where V47 stands right now. Update
 it at the end of every sprint/milestone.
 
-**Last Updated:** 2026-07-10
+For the detailed build record — route inventory, component inventory,
+feature-by-feature decisions, and a changelog — see
+`docs/website/11_As_Built.md`. This file stays a short status snapshot;
+that one is the PRD-style record of what actually got built.
+
+**Last Updated:** 2026-07-19
 
 ## Current Phase
 
